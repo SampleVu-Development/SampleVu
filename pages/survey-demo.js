@@ -3,12 +3,12 @@ import SurveyCard from '../components/survey/SurveyCard'
 
 function surveyQuestionCallback(information) {
   console.log('question information:')
-  for (var key in information) {
+  for (const key in information) {
     console.log(key + ': ' + information[key])
   }
 }
 
-export default function Home() {
+export default function Survey() {
   let multChoices = [
     'Not sweet enough',
     'Not quite sweet enough',

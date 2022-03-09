@@ -22,6 +22,7 @@ module.exports = {
     'airbnb',
     'prettier',
     'prettier/react',
+    'plugin:@next/next/recommended',
   ],
   plugins: ['react', 'prettier'],
 }
