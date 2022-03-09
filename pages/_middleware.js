@@ -3,6 +3,10 @@ import { NextResponse } from 'next/server'
 
 /*
   TODO: Redirect to appropriate auths and login where applicable
+  i.e., exclude invites and surveys from login redirect
+
+  TODO: use JWT token to keep user logged in
+
  */
 
 export async function middleware(req) {
