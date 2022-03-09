@@ -1,17 +1,17 @@
 # Couple of team notes
 
-Make sure you enable Prettier as a plugin, regardless of the editor/IDE you're using (this is being pushed from Webstorm, but VSCode works similarly). Auto-format on save will be your biggest friend.
+Make sure you enable **Prettier** as a plugin, regardless of the editor/IDE you're using (this is being pushed from Webstorm, but VSCode works similarly). Auto-format on save will be your biggest friend.
 
-Before interacting with any code, ensure you have all the dependencies installed, and are using Node LTS v16.14.0 or later, and npm v8.5.2 or later. Recommedation here is to use nvm (Node Version Manager) to download and switch between Node and npm versions.
+Before interacting with any code, ensure you have all the dependencies installed, and are using **Node LTS v16.14.0 or later, and npm v8.5.2 or later**. Recommedation here is to use **nvm** (Node Version Manager) to download and switch between Node and npm versions.
 ```bash
 node -v
 npm -v
 npm install
 ```
 
-Personal recommendation for cloning, branching, or any other git actions is by using [GitHub Desktop](https://desktop.github.com/). This enables easy fetch, pull, and merging, as well as consistent committing, branching, and pushing options. Third party applications for VCS may not work well with the access restrictions in this organizations, but GitHub Desktop is a safe, intuitive way of solving these issues.
+Personal recommendation for cloning, branching, or any other git actions is by using **[GitHub Desktop](https://desktop.github.com/)**. This enables easy fetch, pull, and merging, as well as consistent committing, branching, and pushing options. Third party applications for VCS may not work well with the access restrictions in this organizations, but GitHub Desktop is a safe, intuitive way of solving these issues.
 
-Make sure you fetch and pull from main *frequently*.
+Make sure you **fetch and pull** from main ***frequently***.
 
 Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
 
