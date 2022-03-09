@@ -1,0 +1,4 @@
+// Cypress configuration file
+{
+  "baseUrl": "http://localhost:3000"
+}
