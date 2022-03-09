@@ -1,6 +1,6 @@
 # Couple of team notes
 
-Make sure you enable **Prettier** as a plugin, regardless of the editor/IDE you're using (this is being pushed from Webstorm, but VSCode works similarly). Auto-format on save will be your biggest friend.
+Make sure you enable **Prettier** as a plugin, regardless of the editor/IDE you're using (this is being pushed from Webstorm, but VSCode works similarly). Auto-format on save will be your biggest friend!
 
 Before interacting with any code, ensure you have all the dependencies installed, and are using **Node LTS v16.14.0 or later, and npm v8.5.2 or later**. Recommedation here is to use **nvm** (Node Version Manager) to download and switch between Node and npm versions. If you aren't on nvm, and you're having trouble navigating between Node versions, recommendation is to uninstall node and npm, then download nvm to install node directly through it.
 ```bash
