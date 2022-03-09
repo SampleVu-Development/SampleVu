@@ -11,6 +11,8 @@ npm install
 
 Personal recommendation for cloning, branching, or any other git actions is by using [GitHub Desktop](https://desktop.github.com/). This enables easy fetch, pull, and merging, as well as consistent committing, branching, and pushing options. Third party applications for VCS may not work well with the access restrictions in this organizations, but GitHub Desktop is a safe, intuitive way of solving these issues.
 
+Make sure you fetch and pull from main *frequently*.
+
 Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
 
 You may have noticed TypeScript is enabled here. Majority of the coding will not be in TypeScript per se, but I'm thinking it will be beneficial to have with respect to using ORM libraries and APIs. 
