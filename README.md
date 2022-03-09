@@ -7,7 +7,7 @@ Before interacting with any code, ensure you have all the dependencies installed
 npm install
 ```
 
-Personal recommendation for cloning, branching, or any other git actions is by using [GitHub Desktop](https://desktop.github.com/). This enables easy fetch, pull, and merging, as well as consistent committing, branching, and pushing options.
+Personal recommendation for cloning, branching, or any other git actions is by using [GitHub Desktop](https://desktop.github.com/). This enables easy fetch, pull, and merging, as well as consistent committing, branching, and pushing options. Third party applications for VCS may not work well with the access restrictions in this organizations, but GitHub Desktop is a safe, intuitive way of solving these issues.
 
 Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
 
