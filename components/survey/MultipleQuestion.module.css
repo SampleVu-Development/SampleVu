@@ -1,0 +1,9 @@
+.radioDisplay {
+  padding: 10px;
+  text-align: left;
+}
+
+.deleteAdd {
+  display: flex;
+  justify-content: space-between;
+}
