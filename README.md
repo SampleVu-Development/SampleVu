@@ -11,6 +11,8 @@ Personal recommendation for cloning, branching, or any other git actions is by u
 
 Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
 
+You may have noticed TypeScript is enabled here. Majority of the coding will not be in TypeScript per se, but I'm thinking it will be beneficial to have with respect to using ORM libraries and APIs. 
+
 
 
 
