@@ -1,3 +1,23 @@
+# Couple of team notes
+
+Make sure you enable Prettier as a plugin, regardless of the editor/IDE you're using (this is being pushed from Webstorm, but VSCode works similarly). Auto-format on save will be your biggest friend.
+
+Before interacting with any code, ensure you have all the dependencies installed.
+```bash
+npm install
+```
+
+Personal recommendation for cloning, branching, or any other git actions is by using [GitHub Desktop](https://desktop.github.com/).
+
+Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
+
+
+
+
+
+
+
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
