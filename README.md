@@ -7,7 +7,7 @@ Before interacting with any code, ensure you have all the dependencies installed
 npm install
 ```
 
-Personal recommendation for cloning, branching, or any other git actions is by using [GitHub Desktop](https://desktop.github.com/).
+Personal recommendation for cloning, branching, or any other git actions is by using [GitHub Desktop](https://desktop.github.com/). This enables easy fetch, pull, and merging, as well as consistent committing, branching, and pushing options.
 
 Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
 
