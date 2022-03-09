@@ -2,11 +2,13 @@
   display: flex;
   width: 500px;
 }
+/* Tailwind: "flex, w-__" */
 
 .reOrderBtn {
   padding: 10px;
   margin-left: auto;
 }
+/* Tailwind: "p-2.5 ml-auto " or mx-auto */
 
 .reOrderTitle { 
   padding: 10px;
@@ -14,6 +16,7 @@
   margin-left: 35%;
   color: gray;
 }
+/* Tailwind: "p-2.5 mr-auto ml.." */
 
 .surveyTitle {
   font-weight: bold;

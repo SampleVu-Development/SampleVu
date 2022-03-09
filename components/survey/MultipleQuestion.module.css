@@ -2,8 +2,10 @@
   padding: 10px;
   text-align: left;
 }
+/* Tailwind: "p-2.5 text-left" */
 
 .deleteAdd {
   display: flex;
   justify-content: space-between;
 }
+/* Tailwind: "flex justify-between" */

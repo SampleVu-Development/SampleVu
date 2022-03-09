@@ -1,14 +1,15 @@
-
-.surveySliderContainer { 
+.surveySliderContainer {
   display: flex;
-
 }
+/* Tailwind: "flex" */
 
 .surveySliderIcon { 
   flex: 1;
   padding: 5px;
 }
+/* Tailwind: "flex flex-1 p-1" */
 
 .surveySliderSlide{
   width: 75%
 }
+/* Tailwind: "w-3/4" */
