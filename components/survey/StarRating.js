@@ -1,19 +1,19 @@
-import { Rate, Card} from 'antd';
-import { FrownOutlined, SmileOutlined } from '@ant-design/icons';
+import { Rate, Card } from 'antd'
+import { FrownOutlined, SmileOutlined } from '@ant-design/icons'
 import styles from './SurveySlider.module.css'
 
-export default function StarRating({callback}) {
+export default function StarRating({ callback }) {
   return (
-    <div className={styles.surveySliderContainer} bordered={false}>
-        <div className={styles.surveySliderIcon}>
-          <FrownOutlined />
-        </div>
-        <div className={styles.surveySliderSlide}>
-          <Rate className={styles.surveySliderItem} onChange={callback}/>
-        </div>
-        <div className={styles.surveySliderIcon}>
-          <SmileOutlined  />
-        </div>
+    <div className="flex" bordered={false}>
+      <div className="flex flex-1 p-1">
+        <FrownOutlined />
+      </div>
+      <div className="w-3/4">
+        <Rate className={styles.surveySliderItem} onChange={callback} />
+      </div>
+      <div className="flex flex-1 p-1">
+        <SmileOutlined />
+      </div>
     </div>
   )
 }
