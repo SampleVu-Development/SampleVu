@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
 /*
- * TODO: Invited View
+ * TODO: Invite View
  * Refer to dynamic routing documentation here:
  * https://nextjs.org/docs/routing/dynamic-routes
  *
