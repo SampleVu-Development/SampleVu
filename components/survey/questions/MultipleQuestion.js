@@ -1,7 +1,7 @@
 import { Card, Radio, Button, Input } from 'antd'
 import ReOrderBlock from './ReOrderBlock'
 import styles from './MultipleQuestion.module.css'
-import SurveyTitle from './SurveyTitle'
+import SurveyTitle from '../SurveyTitle'
 import InputBox from './InputBox'
 import { DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons'
 import { useState } from 'react'
