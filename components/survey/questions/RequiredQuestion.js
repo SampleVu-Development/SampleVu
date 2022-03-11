@@ -8,7 +8,7 @@ const { TextArea } = Input
 export default function RequiredQuestion({ title, questionID, callback }) {
   return (
     <div className="custom-container">
-      <Card className="curvedBorder">
+      <Card className="rounded-xl border-gray-300">
         <ReOrderBlock />
         <SurveyTitle text={title} />
         <StarRating callback={e => callback({ title, questionID, type: 'slider', event: e })} />
