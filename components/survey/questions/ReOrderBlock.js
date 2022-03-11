@@ -1,8 +1,6 @@
 import { UpOutlined, DownOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
 
-import styles from './ReOrderBlock.module.css'
-
 function moveUp() {
   // update state here
   console.log('move up')
@@ -15,9 +13,9 @@ function moveDown() {
 
 export default function ReOrderBlock() {
   return (
-    <div className={styles.reOrderContainer}>
-      <div className={styles.reOrderTitle}> Re-order question</div>
-      <div className={styles.reOrderBtn}>
+    <div className="flex">
+      <div className="color-gray mr-auto ml-3.5 p-2.5"> Re-order question</div>
+      <div className="ml-auto p-2.5">
         <Button type="text">
           <UpOutlined onClick={moveUp} />
         </Button>

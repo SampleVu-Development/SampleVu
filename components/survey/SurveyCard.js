@@ -8,7 +8,7 @@ export default function SurveyCard({ title, questionID, type, callback, data }) 
 
   return (
     <div className="flex justify-center p-2.5 text-center">
-      <Card className="rounded-xl border-gray-300">
+      <Card className="w-5/6 max-w-xl rounded-xl border-gray-300">
         {type == 'required' ? (
           <RequiredQuestion questionID={questionID} title={title} callback={callback} />
         ) : type == 'multiple' ? (
