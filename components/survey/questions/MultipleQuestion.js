@@ -1,6 +1,5 @@
 import { Card, Radio, Button, Input } from 'antd'
 import ReOrderBlock from './ReOrderBlock'
-import styles from './MultipleQuestion.module.css'
 import SurveyTitle from '../SurveyTitle'
 import InputBox from './InputBox'
 import { DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons'
@@ -18,7 +17,7 @@ export default function MultipleQuestion({ title, questionID, callback, data }) 
   let choices = []
   data.forEach((x, i) =>
     choices.push(
-      <div className={styles.radioDisplay}>
+      <div className="padding-2.5 text-left">
         <Radio
           onChange={e => callback({ title, questionID, type: 'radio', event: e.target.value })}
           value={i}
@@ -31,24 +30,24 @@ export default function MultipleQuestion({ title, questionID, callback, data }) 
 
   return (
     <>
-        <ReOrderBlock />
-        <SurveyTitle text={title} />
-        <Card bordered={false}>
-          <Radio.Group onChange={manageQuestions} value={value}>
-            {choices}
-          </Radio.Group>
-        </Card>
-        <InputBox title={title} questionID={questionID} callback={callback} />
-        <div className={styles.deleteAdd}>
-          <Button
-            className="no-border"
-            bordered={false}
-            onChange={() => callback({ title, questionID, type: 'delete' })}
-          >
-            <DeleteOutlined />
-            Delete
-          </Button>
-        </div>
-     </>
+      <ReOrderBlock />
+      <SurveyTitle text={title} />
+      <Card bordered={false}>
+        <Radio.Group onChange={manageQuestions} value={value}>
+          {choices}
+        </Radio.Group>
+      </Card>
+      <InputBox title={title} questionID={questionID} callback={callback} />
+      <div className="flex justify-between">
+        <Button
+          className="no-border"
+          bordered={false}
+          onChange={() => callback({ title, questionID, type: 'delete' })}
+        >
+          <DeleteOutlined />
+          Delete
+        </Button>
+      </div>
+    </>
   )
 }
