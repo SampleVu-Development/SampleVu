@@ -43,7 +43,10 @@ export default function CreateQuestion({ callback }) {
                 onChange={e => updateQuestion(i, e)}
               />
             </Radio>
-            <Button className="no-border curvedBorder" onClick={() => deleteQuestion(i)}>
+            <Button
+              className="no-border rounded-xl border-gray-300"
+              onClick={() => deleteQuestion(i)}
+            >
               <DeleteOutlined />
             </Button>
           </div>
@@ -58,7 +61,10 @@ export default function CreateQuestion({ callback }) {
                 onChange={e => updateQuestion(i, e)}
               />
             </Radio>
-            <Button className="no-border curvedBorder" onClick={() => deleteQuestion(i)}>
+            <Button
+              className="no-border rounded-xl border-gray-300"
+              onClick={() => deleteQuestion(i)}
+            >
               <DeleteOutlined />
             </Button>
           </div>
@@ -102,7 +108,7 @@ export default function CreateQuestion({ callback }) {
         <TextArea
           rows={1}
           id="inputModal"
-          className="curvedBorder"
+          className="rounded-xl border-gray-300"
           placeholder="Write question here..."
           onChange={e => setQuestionTitle(e.target.value)}
         />
@@ -110,7 +116,7 @@ export default function CreateQuestion({ callback }) {
         <br />
         <div id="optionDisplay">{currentOptionDisplay}</div>
         <Card bordered={false}>
-          <Button className="curvedBorder" onClick={addQuestion}>
+          <Button className="rounded-xl border-gray-300" onClick={addQuestion}>
             <PlusCircleOutlined /> Add option
           </Button>
         </Card>
@@ -120,8 +126,8 @@ export default function CreateQuestion({ callback }) {
 
   return (
     <>
-      <div className="custom-container">
-        <Button className="curvedBorder" bordered={false} onClick={showModal}>
+      <div className="flex justify-center p-2.5 text-center">
+        <Button className="rounded-xl border-gray-300" bordered={false} onClick={showModal}>
           <PlusCircleOutlined />
           Add Question
         </Button>
