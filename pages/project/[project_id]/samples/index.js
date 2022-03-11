@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 /*
-  TODO: Project Samples View
+  TODO: Project Samples List View
   Shows user all samples (if admin) or all submitted samples (if vendor)
   TODO: Fill PropTypes and QueryTypes -- this will be the data retrieved
 
