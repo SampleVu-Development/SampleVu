@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 /*
  * TODO: Taster Survey View
@@ -14,9 +15,6 @@ import { useRouter } from 'next/router'
  * Also may want to use server-side rendering or generation (SSR/SSG),
  * so use getServerSideProps or getStaticProps
  */
-
-import { useRouter } from 'next/router'
-import Head from 'next/head'
 
 export default function SurveyForm({ survey }) {
   const router = useRouter()
