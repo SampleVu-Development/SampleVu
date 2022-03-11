@@ -5,14 +5,22 @@
   Also offers Next/Link to Login
  */
 
+import Head from 'next/head'
+
 const Signup = () => {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
-      {/* SampleVu Logo */}
-      {/* Sign-up form */}
-      {/* Sign-up button */}
-      {/* Login link */}
-    </div>
+    <>
+      <Head>
+        <title>{/* SampleVu Signup */}</title>
+        {/* Other Metadata */}
+      </Head>
+      <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
+        {/* SampleVu Logo */}
+        {/* Sign-up form */}
+        {/* Sign-up button */}
+        {/* Login link */}
+      </div>
+    </>
   )
 }
 
