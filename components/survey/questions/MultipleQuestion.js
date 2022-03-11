@@ -30,8 +30,7 @@ export default function MultipleQuestion({ title, questionID, callback, data }) 
   )
 
   return (
-    <div className="custom-container">
-      <Card className="curvedBorder">
+    <>
         <ReOrderBlock />
         <SurveyTitle text={title} />
         <Card bordered={false}>
@@ -50,7 +49,6 @@ export default function MultipleQuestion({ title, questionID, callback, data }) 
             Delete
           </Button>
         </div>
-      </Card>
-    </div>
+     </>
   )
 }
