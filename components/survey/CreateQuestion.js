@@ -44,7 +44,7 @@ export default function CreateQuestion({ callback }) {
               />
             </Radio>
             <Button
-              className="no-border rounded-xl border-gray-300"
+              className="rounded-xl border-none border-gray-300"
               onClick={() => deleteQuestion(i)}
             >
               <DeleteOutlined />
@@ -62,7 +62,7 @@ export default function CreateQuestion({ callback }) {
               />
             </Radio>
             <Button
-              className="no-border rounded-xl border-gray-300"
+              className="rounded-xl border-none border-gray-300"
               onClick={() => deleteQuestion(i)}
             >
               <DeleteOutlined />

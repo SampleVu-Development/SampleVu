@@ -40,7 +40,7 @@ export default function MultipleQuestion({ title, questionID, callback, data }) 
       <InputBox title={title} questionID={questionID} callback={callback} />
       <div className="flex justify-between">
         <Button
-          className="no-border"
+          className="border-none"
           bordered={false}
           onChange={() => callback({ title, questionID, type: 'delete' })}
         >
