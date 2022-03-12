@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { GetServerSideProps } from 'next'
 
 /*
   TODO: Edit Survey View for project admins
@@ -12,7 +13,7 @@ import Head from 'next/head'
   TODO: Validate user edit permissions, otherwise redirect to "invalid permission" page
  */
 
-export default function Survey({ survey }) {
+const Survey = ({ survey: [] }) => {
   const router = useRouter()
   // Survey Data should be fetched through ServerSideProps
   // const { project_id } = router.query
@@ -34,13 +35,15 @@ export default function Survey({ survey }) {
 }
 
 /* Server-side Rendering (SSR) */
-export async function getServerSideProps({ params }) {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   // TODO: Fetch survey data
 
   // const req = await fetch(`http://localhost:3000/${params.project_id}.json`);
   // const data = await req.json();
   //
   return {
-    props: { survey: data },
+    props: { survey: [] },
   }
 }
+
+export default Survey

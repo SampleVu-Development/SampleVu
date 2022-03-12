@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { GetServerSideProps } from 'next'
 
 /*
-  TODO: Project Main View
-  Shows user high level overview of Project
+  TODO: Project Samples List View
+  Shows user all samples (if admin) or all submitted samples (if vendor)
   TODO: Fill PropTypes and QueryTypes -- this will be the data retrieved
 
   Later...
@@ -11,7 +12,7 @@ import Head from 'next/head'
   TODO: Validate user edit permissions, otherwise redirect to "invalid permission" page
  */
 
-export default function ProjectSamples({ project }) {
+const ProjectSamples = ({ project: [] }) => {
   const router = useRouter()
   // Survey Data should be fetched through ServerSideProps
   const { project_id } = router.query
@@ -19,11 +20,21 @@ export default function ProjectSamples({ project }) {
   return (
     <>
       <Head>
-        <title>{/* Project Main View */}</title>
+        <title>{/* Project Samples */}</title>
         {/* Other Metadata */}
       </Head>
       {/* Navbar? Save for later */}
-      {/* Project Main View */}
+      {/* Samples View */}
     </>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  // const res = await fetch("http://localhost:3000/api/drafts")
+  // const drafts = await res.json()
+  return {
+    props: { samples: [] },
+  }
+}
+
+export default ProjectSamples

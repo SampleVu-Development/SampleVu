@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import React from 'react'
 
 /*
   TODO: Create Sample View for new samples
@@ -10,7 +11,7 @@ import Head from 'next/head'
   TODO: Validate user edit permissions, otherwise redirect to "invalid permission" page
  */
 
-export default function CreateSample({ sample }) {
+const CreateSample: React.FC = () => {
   const router = useRouter()
   // Survey Data should be fetched through ServerSideProps
   const { project_id } = router.query
@@ -27,3 +28,5 @@ export default function CreateSample({ sample }) {
     </>
   )
 }
+
+export default CreateSample

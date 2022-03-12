@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { GetServerSideProps } from 'next'
 
 /*
   TODO: Project insights view for project members
@@ -12,7 +13,7 @@ import Head from 'next/head'
   TODO: Validate user permissions, otherwise redirect to "invalid permission" page
  */
 
-export default function Insights({ project }) {
+const Insights = ({ data: [] }) => {
   const router = useRouter()
   // Survey Data should be fetched through ServerSideProps
   const { project_id } = router.query
@@ -29,3 +30,13 @@ export default function Insights({ project }) {
     </>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  // const res = await fetch("http://localhost:3000/api/")
+  // const sample = await res.json()
+  return {
+    props: { data: [] },
+  }
+}
+
+export default Insights

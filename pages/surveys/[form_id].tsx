@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import React from 'react'
+import { GetServerSideProps } from 'next'
 
 /*
  * TODO: Taster Survey View
@@ -16,7 +18,7 @@ import Head from 'next/head'
  * so use getServerSideProps or getStaticProps
  */
 
-export default function SurveyForm({ survey }) {
+const SurveyForm = ({ survey: [] }) => {
   const router = useRouter()
   // Survey Data should be fetched through ServerSideProps or something
   const { form_id } = router.query
@@ -36,13 +38,16 @@ export default function SurveyForm({ survey }) {
 }
 
 /* Server-side Rendering (SSR) */
-export async function getServerSideProps({ params }) {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   // TODO: Fetch survey data
 
   // const req = await fetch(`http://localhost:3000/${params.project_id}.json`);
   // const data = await req.json();
   //
   return {
-    props: { survey: data },
+    props: { survey: [] },
+    // props: { survey: data },
   }
 }
+
+export default SurveyForm

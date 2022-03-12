@@ -5,8 +5,9 @@
  */
 
 import Head from 'next/head'
+import React from 'react'
 
-const Settings = () => {
+const Settings: React.FC = () => {
   return (
     <>
       <Head>
@@ -18,3 +19,5 @@ const Settings = () => {
     </>
   )
 }
+
+export default Settings

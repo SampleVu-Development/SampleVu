@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { GetServerSideProps } from 'next'
 
 /*
   TODO: Sample View for specific samples
@@ -10,7 +11,7 @@ import Head from 'next/head'
   TODO: Validate user edit permissions, otherwise redirect to "invalid permission" page
  */
 
-export default function Sample({ project }) {
+const Sample = ({ sample: [] }) => {
   const router = useRouter()
   // Survey Data should be fetched through ServerSideProps
   const { project_id, sample_id } = router.query
@@ -26,3 +27,13 @@ export default function Sample({ project }) {
     </>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  // const res = await fetch("http://localhost:3000/api/")
+  // const sample = await res.json()
+  return {
+    props: { sample: [] },
+  }
+}
+
+export default Sample

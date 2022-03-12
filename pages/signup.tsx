@@ -6,8 +6,12 @@
  */
 
 import Head from 'next/head'
+import React, { useState } from 'react'
 
-const Signup = () => {
+const SignUp: React.FC = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+
   return (
     <>
       <Head>
@@ -24,4 +28,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default SignUp

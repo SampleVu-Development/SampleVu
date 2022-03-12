@@ -3,3 +3,9 @@
   Validates all (required) questions have answers before submitting
   API to be added later
  */
+
+const SubmitSurveyButton = () => {
+  return <button>Submit</button>
+}
+
+export default SubmitSurveyButton
