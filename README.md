@@ -15,7 +15,7 @@ Make sure you **fetch and pull** from main ***frequently***.
 
 Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
 
-You may have noticed TypeScript is enabled here. Majority of the coding will not be in TypeScript per se, but I'm thinking it will be beneficial to have with respect to using ORM libraries and APIs. 
+You may have noticed TypeScript is enabled here. Because plain JS is valid TS, we've decided to do the rest of the coding in TypeScript so that we can properly type and document various props and whatnot passed down components. Also enables us to catch a fair amount of bugs at compile time, and will be much more maintainable as the project develops. Because Next.js 12 has a built-in TS compiler in their Rust SWC, it'll be fair better to work with than if we had used Babel. It will also be beneficial to have with respect to using ORM libraries (most likely using Prisma) and APIs. 
 
 
 
