@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import Head from 'next/head'
 import React from 'react'
 import { GetServerSideProps } from 'next'
@@ -20,9 +20,9 @@ import PageLayout from '../../components/PageLayout'
  */
 
 const SurveyForm = ({ survey: [] }) => {
-  const router = useRouter()
+  // const router = useRouter()
   // Survey Data should be fetched through ServerSideProps or something
-  const { form_id } = router.query
+  // const { form_id } = router.query
 
   return (
     <PageLayout>
@@ -39,10 +39,12 @@ const SurveyForm = ({ survey: [] }) => {
 }
 
 /* Server-side Rendering (SSR) */
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params: { form_id } }) => {
   // TODO: Fetch survey data
+  // props sent through this function has Request information, including params
+  // params thus includes form_id
 
-  // const req = await fetch(`http://localhost:3000/${params.project_id}.json`);
+  // const req = await fetch(`http://localhost:3000/${form_id}.json`);
   // const data = await req.json();
   //
   return {

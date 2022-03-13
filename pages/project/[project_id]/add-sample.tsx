@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
-import Head from 'next/head'
 import React from 'react'
-import PageLayout from '../../../../components/PageLayout'
+import PageLayout from '../../../components/PageLayout'
 
 /*
   TODO: Create Sample View for new samples

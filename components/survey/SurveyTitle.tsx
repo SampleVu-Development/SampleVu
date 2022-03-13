@@ -17,7 +17,8 @@ import { Card } from 'antd'
 // props to be passed through SurveyPage in ServerSideProps? To be decided
 const SurveyTitle = ({ title, description, editable }) => {
   // should manage editable state, possibly passed through props?
-  // should communicate project title and sample title?
+  // should communicate project title and sample title? if on taster survey
+  // maybe split into EditableSurveyTitle and just SurveyTitle
 
   return (
     <div className="flex justify-center p-2.5 text-center">

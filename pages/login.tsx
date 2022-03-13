@@ -27,4 +27,6 @@ const Login: React.FC = () => {
   )
 }
 
+// GetStaticProps?
+
 export default Login

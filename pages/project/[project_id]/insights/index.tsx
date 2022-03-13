@@ -27,7 +27,7 @@ const Insights = ({ data: [] }) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params: { project_id } }) => {
   // const res = await fetch("http://localhost:3000/api/")
   // const sample = await res.json()
   return {

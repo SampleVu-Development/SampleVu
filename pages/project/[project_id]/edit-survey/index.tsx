@@ -35,7 +35,7 @@ const Survey = ({ survey: [] }) => {
 }
 
 /* Server-side Rendering (SSR) */
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params: { project_id } }) => {
   // TODO: Fetch survey data
 
   // const req = await fetch(`http://localhost:3000/${params.project_id}.json`);
