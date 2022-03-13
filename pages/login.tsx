@@ -7,10 +7,11 @@
 
 import Head from 'next/head'
 import React from 'react'
+import PageLayout from '../components/PageLayout'
 
 const Login: React.FC = () => {
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{/* SampleVu Login */}</title>
         {/* Other Metadata */}
@@ -22,7 +23,7 @@ const Login: React.FC = () => {
         {/* Sign-up link */}
         {/* Forgot password link */}
       </div>
-    </>
+    </PageLayout>
   )
 }
 

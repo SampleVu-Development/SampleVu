@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import React from 'react'
 import { GetServerSideProps } from 'next'
+import PageLayout from '../../components/PageLayout'
 
 /*
  * TODO: Taster Survey View
@@ -24,7 +25,7 @@ const SurveyForm = ({ survey: [] }) => {
   const { form_id } = router.query
 
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{/* Project Main View */}</title>
         {/* Other Metadata */}
@@ -33,7 +34,7 @@ const SurveyForm = ({ survey: [] }) => {
       {/* Star Rating Question Card - Immovable */}
       {/* Rest of the Cards */}
       {/* Submit Survey Button */}
-    </>
+    </PageLayout>
   )
 }
 

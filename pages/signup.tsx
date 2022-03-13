@@ -7,13 +7,14 @@
 
 import Head from 'next/head'
 import React, { useState } from 'react'
+import PageLayout from '../components/PageLayout'
 
 const SignUp: React.FC = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
 
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{/* SampleVu Signup */}</title>
         {/* Other Metadata */}
@@ -24,7 +25,7 @@ const SignUp: React.FC = () => {
         {/* Sign-up button */}
         {/* Login link */}
       </div>
-    </>
+    </PageLayout>
   )
 }
 

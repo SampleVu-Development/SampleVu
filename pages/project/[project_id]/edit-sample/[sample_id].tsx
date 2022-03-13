@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import Head from 'next/head'
 import { GetServerSideProps } from 'next'
+import PageLayout from '../../../../components/PageLayout'
 
 /*
   TODO: Edit Sample View for specific samples
@@ -13,19 +13,15 @@ import { GetServerSideProps } from 'next'
 
 const EditSample = ({ sample: [] }) => {
   const router = useRouter()
-  // Survey Data should be fetched through ServerSideProps
+  // Sample Data should be fetched through ServerSideProps
   const { project_id, sample_id } = router.query
 
   return (
-    <>
-      <Head>
-        <title>{/* Sample */}</title>
-        {/* Other Metadata */}
-      </Head>
+    <PageLayout>
       {/* Navbar? Save for later */}
       {/* Sample Form */}
       {/* Save Sample Button */}
-    </>
+    </PageLayout>
   )
 }
 

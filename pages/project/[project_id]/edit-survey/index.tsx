@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
+import PageLayout from '../../../../components/PageLayout'
 
 /*
   TODO: Edit Survey View for project admins
@@ -19,18 +20,17 @@ const Survey = ({ survey: [] }) => {
   // const { project_id } = router.query
 
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{/* SampleVu Edit Survey Title */}</title>
         {/* Other Metadata */}
       </Head>
-      {/* Navbar? Save for later */}
       {/* Survey Head Card */}
       {/* Star Rating Question Card - Immovable */}
       {/* Rest of the Cards */}
       {/* Add Question Button */}
       {/* Save Survey Button */}
-    </>
+    </PageLayout>
   )
 }
 

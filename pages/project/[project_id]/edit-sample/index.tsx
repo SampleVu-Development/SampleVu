@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import React from 'react'
+import PageLayout from '../../../../components/PageLayout'
 
 /*
   TODO: Create Sample View for new samples
@@ -13,19 +14,13 @@ import React from 'react'
 
 const CreateSample: React.FC = () => {
   const router = useRouter()
-  // Survey Data should be fetched through ServerSideProps
   const { project_id } = router.query
 
   return (
-    <>
-      <Head>
-        <title>{/* Sample */}</title>
-        {/* Other Metadata */}
-      </Head>
-      {/* Navbar? Save for later */}
+    <PageLayout>
       {/* Sample Form */}
       {/* Submit Sample Button */}
-    </>
+    </PageLayout>
   )
 }
 

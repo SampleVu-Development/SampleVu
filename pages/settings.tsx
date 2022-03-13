@@ -6,17 +6,18 @@
 
 import Head from 'next/head'
 import React from 'react'
+import PageLayout from '../components/PageLayout'
 
 const Settings: React.FC = () => {
   return (
-    <>
+    <PageLayout>
       <Head>
         <title>{/* Project Main View */}</title>
         {/* Other Metadata */}
       </Head>
       {/* Navbar */}
       {/* Settings form */}
-    </>
+    </PageLayout>
   )
 }
 

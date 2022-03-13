@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
+import PageLayout from '../../../components/PageLayout'
 
 /*
   TODO: Project Main View
@@ -17,16 +18,7 @@ const ProjectView = ({ project: [] }) => {
   // Survey Data should be fetched through ServerSideProps
   const { project_id } = router.query
 
-  return (
-    <>
-      <Head>
-        <title>{/* Project Main View */}</title>
-        {/* Other Metadata */}
-      </Head>
-      {/* Navbar? Save for later */}
-      {/* Project Main View */}
-    </>
-  )
+  return <PageLayout>{/* Project Main View */}</PageLayout>
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
