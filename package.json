@@ -1,4 +1,11 @@
 {
+  "name": "samplevu",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [],
+  "license": "",
+  "author": "SampleVu",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
