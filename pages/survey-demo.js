@@ -30,20 +30,20 @@ export default function Survey() {
       <main className="p-2.5 text-center">
         <SurveyCard
           type="required"
-          title="How would you rate this sample overall?"
+          question="How would you rate this sample overall?"
           callback={surveyQuestionCallback}
           questionID={question0ID}
         />
         <SurveyCard
           type="multiple"
-          title="How does this sample meet your needs for sweetness?"
+          question="How does this sample meet your needs for sweetness?"
           data={multiChoices}
           callback={surveyQuestionCallback}
           questionID={question1ID}
         />
         <SurveyCard
           type="multiple"
-          title="How would you rate the color of this sample?"
+          question="How would you rate the color of this sample?"
           data={multiChoices2}
           callback={surveyQuestionCallback}
           questionID={question2ID}
