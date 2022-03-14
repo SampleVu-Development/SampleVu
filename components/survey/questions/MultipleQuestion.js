@@ -31,13 +31,13 @@ export default function MultipleQuestion({ question, questionID, callback, data 
     <>
       <ReOrderBlock />
       <h1 className="font-bold">{question}</h1>
-      <Card bordered={false}>
+      <Card className="pl-5 text-left" bordered={false}>
         <Radio.Group onChange={manageQuestions} value={value}>
           {choices}
         </Radio.Group>
       </Card>
-      <InputBox question={question} questionID={questionID} callback={callback} />
-      <div className="flex justify-between">
+      {/*<InputBox question={question} questionID={questionID} callback={callback} />*/}
+      <div className="flex justify-between pt-3">
         <Button
           className="border-none"
           bordered={false}

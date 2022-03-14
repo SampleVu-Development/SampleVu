@@ -1,6 +1,7 @@
 import { Input, Card } from 'antd'
 const { TextArea } = Input
 
+// TODO: InputBox should automatically expand
 export default function InputBox({ questionID, question, callback }) {
   return (
     <Card bordered={false}>
