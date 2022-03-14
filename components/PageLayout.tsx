@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
+import Header from './Header'
 
-type Props = {
+type PageProps = {
+  pageName: string
   children: ReactNode
 }
 
@@ -12,11 +14,13 @@ type Props = {
 /**
  * Styled wrapper for pages, includes header/navbar
  * @param children {ReactNode} ReactElements or JSX to be passed and wrapped
+ * @param pageName {string} Current page name
  * @constructor
  */
-const PageLayout: React.FC<Props> = ({ children }) => (
+const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
   <div>
-    {/* Header/Navbar component */}
+    {/* Header + Navbar component */}
+    <Header pageName={pageName} />
     {/* Elements to be passed from page */}
     <div>{children}</div>
   </div>
