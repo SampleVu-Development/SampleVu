@@ -14,7 +14,6 @@ function moveDown() {
 export default function ReOrderBlock() {
   return (
     <div className="flex">
-      <div className="color-gray mr-auto ml-3.5 p-2.5"> Re-order question</div>
       <div className="ml-auto p-2.5">
         <Button type="text">
           <UpOutlined onClick={moveUp} />
