@@ -18,7 +18,7 @@ const ProjectView = ({ project: [] }) => {
   // Data should be fetched through ServerSideProps
   // const { project_id } = router.query
 
-  return <PageLayout>{/* Project Main View */}</PageLayout>
+  return <PageLayout pageName="Project View">{/* Project Main View */}</PageLayout>
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {

@@ -20,7 +20,7 @@ const InvitedView = () => {
   const { invite_id } = router.query
 
   return (
-    <PageLayout>
+    <PageLayout pageName="">
       <Head>
         <title>You've been invited to a SampleVu project!</title>
         {/*  Other metadata */}

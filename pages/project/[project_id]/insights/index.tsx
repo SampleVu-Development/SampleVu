@@ -20,7 +20,7 @@ const Insights = ({ data: [] }) => {
   const { project_id } = router.query
 
   return (
-    <PageLayout>
+    <PageLayout pageName="Insights">
       {/* Top Insights */}
       {/* Scrollable insights */}
     </PageLayout>

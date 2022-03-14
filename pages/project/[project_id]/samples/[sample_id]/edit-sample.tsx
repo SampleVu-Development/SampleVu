@@ -17,7 +17,7 @@ const EditSample = ({ sample: [] }) => {
   const { project_id, sample_id } = router.query
 
   return (
-    <PageLayout>
+    <PageLayout pageName="Edit Sample">
       {/* Navbar? Save for later */}
       {/* Sample Form */}
       {/* Save Sample Button */}

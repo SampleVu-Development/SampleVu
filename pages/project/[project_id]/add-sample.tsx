@@ -16,7 +16,7 @@ const CreateSample: React.FC = () => {
   const { project_id } = router.query
 
   return (
-    <PageLayout>
+    <PageLayout pageName="Add Sample">
       {/* Sample Form */}
       {/* Submit Sample Button */}
     </PageLayout>

@@ -20,7 +20,7 @@ const Survey = ({ survey: [] }) => {
   // const { project_id } = router.query
 
   return (
-    <PageLayout>
+    <PageLayout pageName="Edit Survey">
       <Head>
         <title>{/* SampleVu Edit Survey Title */}</title>
         {/* Other Metadata */}

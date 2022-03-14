@@ -10,7 +10,7 @@ import PageLayout from '../components/PageLayout'
 
 const Settings: React.FC = () => {
   return (
-    <PageLayout>
+    <PageLayout pageName="User Settings">
       <Head>
         <title>{/* Project Main View */}</title>
         {/* Other Metadata */}

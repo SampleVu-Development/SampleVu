@@ -25,7 +25,7 @@ const SurveyForm = ({ survey: [] }) => {
   // const { form_id } = router.query
 
   return (
-    <PageLayout>
+    <PageLayout pageName="Project Name: Sample Name">
       <Head>
         <title>{/* Project Main View */}</title>
         {/* Other Metadata */}

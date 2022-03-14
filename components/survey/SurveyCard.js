@@ -9,16 +9,16 @@ export default function SurveyCard({ question, questionID, type, callback, data 
   return (
     <div className="flex justify-center p-2.5 text-center">
       <Card className="w-5/6 max-w-xl rounded-xl border-gray-300">
-        {type == 'required' ? (
+        {type === 'required' ? (
           <RequiredQuestion questionID={questionID} question={question} callback={callback} />
-        ) : type == 'multiple' ? (
+        ) : type === 'multiple' ? (
           <MultipleQuestion
             questionID={questionID}
             question={question}
             data={data}
             callback={callback}
           />
-        ) : type == 'create' ? (
+        ) : type === 'create' ? (
           <CreateQuestion callback={callback} />
         ) : (
           <p>default</p>

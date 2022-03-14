@@ -17,7 +17,7 @@ const Sample = ({ sample: [] }) => {
   // Survey Data should be fetched through ServerSideProps
   // const { project_id, sample_id } = router.query
 
-  return <PageLayout>{/* Sample Information */}</PageLayout>
+  return <PageLayout pageName="Sample">{/* Sample Information */}</PageLayout>
 }
 
 export const getServerSideProps: GetServerSideProps = async ({

@@ -14,7 +14,7 @@ const SignUp: React.FC = () => {
   const [email, setEmail] = useState('')
 
   return (
-    <PageLayout>
+    <PageLayout pageName="Sign Up">
       <Head>
         <title>{/* SampleVu Signup */}</title>
         {/* Other Metadata */}

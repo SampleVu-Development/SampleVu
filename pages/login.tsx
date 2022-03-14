@@ -11,7 +11,7 @@ import PageLayout from '../components/PageLayout'
 
 const Login: React.FC = () => {
   return (
-    <PageLayout>
+    <PageLayout pageName="Sign In">
       <Head>
         <title>{/* SampleVu Login */}</title>
         {/* Other Metadata */}
