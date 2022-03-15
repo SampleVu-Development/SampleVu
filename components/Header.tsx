@@ -1,6 +1,8 @@
 import React from 'react'
 import { Layout, Avatar } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
+import Image from 'next/image'
+import logo from '../public/darkBackgroundLogo/SampleVu_Logo.svg'
 
 /*
   TODO: Header
@@ -9,17 +11,13 @@ import { UserOutlined } from '@ant-design/icons'
   Refer to antd documentation
  */
 const { Header } = Layout
-const PageLayout = ({ pageName }) => {
+const TopHeader = ({ pageName }) => {
   return (
-    <Header className="flex justify-between">
-      <img
-        className="mt-4"
-        src={require('../public/darkBackgroundLogo/SampleVu_Logo.png')}
-        alt="logo"
-      />
+    <Header className="flex  justify-between">
+      <Image src={logo} alt="logo" width={150} height={100} />
       <Avatar className="mt-4 bg-slate-700" size="large" icon={<UserOutlined />} />
     </Header>
   )
 }
 
-export default PageLayout
+export default TopHeader
