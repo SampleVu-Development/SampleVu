@@ -13,7 +13,7 @@ import logo from '../public/darkBackgroundLogo/SampleVu_Logo.svg'
 const { Header } = Layout
 const TopHeader = ({ pageName }) => {
   return (
-    <Header className="flex  justify-between">
+    <Header className="flex justify-between">
       <Image src={logo} alt="logo" width={150} height={100} />
       <Avatar className="mt-4 bg-slate-700" size="large" icon={<UserOutlined />} />
     </Header>
