@@ -11,6 +11,7 @@ const OverallRatingCard = ({ question, questionID, callback }) => {
         <h1 className="py-5 text-center font-bold">How would you rate this sample overall?</h1>
         <StarRating callback={e => callback({ question, questionID, type: 'slider', event: e })} />
         <InputBox question={question} questionID={questionID} callback={callback} />
+        {/* If editable, maybe "This question cannot be edited or moved"?  */}
       </Card>
     </div>
   )
