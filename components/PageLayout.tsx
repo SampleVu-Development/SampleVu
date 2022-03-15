@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react'
 import Header from './Header'
+import { Layout, PageHeader } from 'antd'
+import Navbar from './Navbar'
 
 type PageProps = {
   pageName: string
@@ -17,13 +19,20 @@ type PageProps = {
  * @param pageName {string} Current page name
  * @constructor
  */
+const { Sider } = Layout
 const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
-  <div>
-    {/* Header + Navbar component */}
+  <Layout>
     <Header pageName={pageName} />
-    {/* Elements to be passed from page */}
-    <div>{children}</div>
-  </div>
+    <Layout>
+      <Sider className="bg-white">
+        <Navbar />
+      </Sider>
+      <Layout>
+        <PageHeader title={pageName} className="bg-white" />
+        <div>{children}</div>
+      </Layout>
+    </Layout>
+  </Layout>
 )
 
 export default PageLayout

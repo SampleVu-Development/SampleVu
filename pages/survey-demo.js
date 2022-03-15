@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import SurveyCard from '../components/survey/SurveyCard'
 import OverallRatingCard from '../components/survey/OverallRatingCard'
+import PageLayout from '../components/PageLayout'
 
 function surveyQuestionCallback(information) {
   console.log('question information:')
@@ -28,39 +29,41 @@ export default function Survey() {
         <title>SampleVu</title>
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </Head>
-      <main className="p-2.5 text-center">
-        <OverallRatingCard questionID={0} callback={surveyQuestionCallback} />
+      <PageLayout pageName=" Create Survey">
+        <main className="p-2.5 text-center">
+          <OverallRatingCard questionID={0} callback={surveyQuestionCallback} />
 
-        {/*<SurveyCard*/}
-        {/*  type="required"*/}
-        {/*  question="How would you rate this sample overall?"*/}
-        {/*  callback={surveyQuestionCallback}*/}
-        {/*  questionID={question0ID}*/}
-        {/*/>*/}
+          {/*<SurveyCard*/}
+          {/*  type="required"*/}
+          {/*  question="How would you rate this sample overall?"*/}
+          {/*  callback={surveyQuestionCallback}*/}
+          {/*  questionID={question0ID}*/}
+          {/*/>*/}
 
-        {/* Entire area should be "Droppable" */}
-        {/* Questions array .map to "Draggable" SurveyCards */}
+          {/* Entire area should be "Droppable" */}
+          {/* Questions array .map to "Draggable" SurveyCards */}
 
-        <SurveyCard
-          type="multiple"
-          question="How does this sample meet your needs for sweetness?"
-          data={multiChoices}
-          callback={surveyQuestionCallback}
-          questionID={question1ID}
-        />
-        <SurveyCard
-          type="multiple"
-          question="How would you rate the color of this sample?"
-          data={multiChoices2}
-          callback={surveyQuestionCallback}
-          questionID={question2ID}
-        />
+          <SurveyCard
+            type="multiple"
+            question="How does this sample meet your needs for sweetness?"
+            data={multiChoices}
+            callback={surveyQuestionCallback}
+            questionID={question1ID}
+          />
+          <SurveyCard
+            type="multiple"
+            question="How would you rate the color of this sample?"
+            data={multiChoices2}
+            callback={surveyQuestionCallback}
+            questionID={question2ID}
+          />
 
-        <SurveyCard type="create" callback={surveyQuestionCallback} />
+          <SurveyCard type="create" callback={surveyQuestionCallback} />
 
-        {/* Add Question Button */}
-        {/* Save Survey Button */}
-      </main>
+          {/* Add Question Button */}
+          {/* Save Survey Button */}
+        </main>
+      </PageLayout>
     </>
   )
 }
