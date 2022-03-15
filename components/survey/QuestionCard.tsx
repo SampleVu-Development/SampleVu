@@ -28,15 +28,16 @@ export type QuestionProps = {
   required: boolean
 }
 
+// passed through EditSurvey or TasterSurvey by mapping array of question objects obtained from data
 // pass in QuestionData via object spread props={...question}
-const QuestionCard = ({
+const QuestionCard: React.FC<QuestionProps> = ({
   question: text,
   questionId: id,
   questionOrder: order,
   questionType: type,
   answerChoices: choices,
   required: isRequired,
-}: QuestionProps) => {
+}) => {
   const [question, setQuestion] = useState(text)
   const [questionType, setQuestionType] = useState(type)
   const [answerChoices, setAnswerChoices] = useState(choices)
@@ -66,7 +67,7 @@ const QuestionCard = ({
             // if editable, should also have delete button for each option
           ))
         ) : (
-          // TextArea Input
+          // TextArea Input for ShortAnswer
           <Card bordered={false}>
             <TextArea
               rows={1}
