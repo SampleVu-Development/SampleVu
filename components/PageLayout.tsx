@@ -26,7 +26,7 @@ const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
   <Layout>
     <Header pageName={pageName} />
     <Layout>
-      <Sider className="bg-white">
+      <Sider className="hidden bg-white md:block">
         <Navbar />
       </Sider>
       <Layout>
