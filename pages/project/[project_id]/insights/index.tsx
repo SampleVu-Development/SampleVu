@@ -22,7 +22,7 @@ const Insights = ({ data: [] }) => {
   return (
     <PageLayout pageName="Insights">
       {/* Top Insights */}
-      {/* Scrollable insights */}
+      {/* Charts */}
     </PageLayout>
   )
 }

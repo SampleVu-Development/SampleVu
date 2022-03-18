@@ -18,7 +18,6 @@ const EditSample = ({ sample: [] }) => {
 
   return (
     <PageLayout pageName="Edit Sample">
-      {/* Navbar? Save for later */}
       {/* Sample Form */}
       {/* Save Sample Button */}
     </PageLayout>

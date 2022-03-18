@@ -39,7 +39,7 @@ const SurveyForm = ({ survey }) => {
         <title>{/* Project Main View */}</title>
         {/* Other Metadata */}
       </Head>
-      {/* Survey */}
+      {/* Survey Title */}
       {/* Star Rating Question Card - Immovable */}
       <OverallRatingCard {...question} />
 

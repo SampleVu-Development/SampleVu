@@ -38,6 +38,7 @@ const QuestionCard: React.FC<QuestionProps> = ({
   answerChoices: choices,
   required: isRequired,
 }) => {
+  // Maybe use useRef hook instead for form building, since we only need to "save" state on submit
   const [question, setQuestion] = useState(text)
   const [questionType, setQuestionType] = useState(type)
   const [answerChoices, setAnswerChoices] = useState(choices)
@@ -55,7 +56,7 @@ const QuestionCard: React.FC<QuestionProps> = ({
       <Card className="w-5/6 max-w-xl rounded-xl border-gray-300">
         {/* If editable, Reorder buttons (editable && ...)*/}
 
-        {/* If editable, Select Question Type Dropdown (onChange => setQuestionType) */}
+        {/* If editable, Select Question Type Dropdown like Google Forms (onChange => setQuestionType) */}
 
         {/* If editable, Question Input, else, Question */}
 
