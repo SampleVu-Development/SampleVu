@@ -1,8 +1,9 @@
 import React from 'react'
 import { Layout, Avatar } from 'antd'
+import Title from 'antd/lib/typography/Title'
 import { UserOutlined } from '@ant-design/icons'
 import Image from 'next/image'
-import logo from '../public/darkBackgroundLogo/SampleVu_Logo.svg'
+import logo from '../public/darkBackgroundLogo/SampleVu_Logo.png'
 
 /*
   TODO: Header
@@ -13,9 +14,19 @@ import logo from '../public/darkBackgroundLogo/SampleVu_Logo.svg'
 const { Header } = Layout
 const TopHeader = ({ pageName }) => {
   return (
-    <Header className="flex justify-between">
-      <Image src={logo} alt="logo" width={150} height={100} />
-      <Avatar className="mt-4 bg-slate-700" size="large" icon={<UserOutlined />} />
+    <Header className="sticky top-0 z-30 items-center p-3 ">
+      <a href="/" className="">
+        <Image src={logo} alt="logo" width={145} height={30} className="hover:bg-bannerHover" />
+      </a>
+
+      {/* this link should take user to user profile but for right now I'll just set it to "/" */}
+      <a href="/">
+        <Avatar
+          className=" bg-slate-700 float-right hover:bg-bannerHover"
+          size="large"
+          icon={<UserOutlined />}
+        />
+      </a>
     </Header>
   )
 }
