@@ -10,11 +10,19 @@ import { HomeOutlined, AppstoreOutlined } from '@ant-design/icons'
 
 const Navbar: React.FC = () => {
   return (
-    <Menu mode="inline">
-      <Menu.Item key="1" icon={<HomeOutlined />}>
+    <Menu mode="inline" className="sticky top-20 mt-3">
+      <Menu.Item
+        key="1"
+        icon={<HomeOutlined style={{ fontSize: '100%' }} />}
+        className=" indent-4 text-[18px] "
+      >
         Home
       </Menu.Item>
-      <Menu.Item key="2" icon={<AppstoreOutlined />}>
+      <Menu.Item
+        key="2"
+        icon={<AppstoreOutlined style={{ fontSize: '100%' }} />}
+        className="indent-4  text-[18px]"
+      >
         Project
       </Menu.Item>
     </Menu>
