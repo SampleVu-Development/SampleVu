@@ -14,14 +14,14 @@ const Navbar: React.FC = () => {
       <Menu.Item
         key="1"
         icon={<HomeOutlined style={{ fontSize: '100%' }} />}
-        className=" indent-4 text-[18px] "
+        className=" indent-4 text-[17px] "
       >
         Home
       </Menu.Item>
       <Menu.Item
         key="2"
         icon={<AppstoreOutlined style={{ fontSize: '100%' }} />}
-        className="indent-4  text-[18px]"
+        className="indent-4  text-[17px]"
       >
         Project
       </Menu.Item>
