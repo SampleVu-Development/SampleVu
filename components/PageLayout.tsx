@@ -23,7 +23,7 @@ type PageProps = {
  */
 const { Sider } = Layout
 const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
-  <Layout>
+  <Layout data-testid="PageLayout">
     <Header pageName={pageName} />
     <Layout>
       <Sider className="hidden bg-white md:block" width={190}>

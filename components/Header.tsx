@@ -18,7 +18,7 @@ import Logo from '../public/logo/SampleVu_Logo.svg'
 const { Header } = Layout
 const TopHeader = ({ pageName }) => {
   const header = (
-    <Header className="px-18 sticky top-0 z-30 w-full">
+    <Header data-testid="Header" className="px-15 sticky top-0 z-30 w-full">
       <div className="text-slate-700 flex items-center justify-between">
         <div className=" flex items-center">
           <span>
