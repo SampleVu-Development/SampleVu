@@ -17,14 +17,13 @@ describe('PageLayout', () => {
     render(<PageLayout {...expectedProps} />)
     const element = screen.getByTestId('PageLayout')
 
-    expect(element).toBeVisible()
+    expect(pageName).toBeVisible()
   })
   test('renders pageName', () => {
-    const { getByText } = render(<PageLayout {...expectedProps} />)
+    const { getByText, getByAltText } = render(<PageLayout {...expectedProps} />)
     const pageName = getByText(expectedProps.pageName)
 
     expect(pageName).toBeVisible()
-    expect(pageName).toBe('SampleVu Header')
   })
 })
 
