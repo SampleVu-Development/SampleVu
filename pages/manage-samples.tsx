@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Card, Button, PageHeader, Input, Descriptions, Space, Table } from 'antd'
+import { Card, Button, PageHeader, Input, Descriptions, Space, Table, Rate, Switch } from 'antd'
 import {
   PlusOutlined,
   ColumnHeightOutlined,
@@ -23,16 +23,10 @@ export default function ManageSamples() {
       sampleID: '59468-622',
       vendor: 'ADM',
       date: '04/18/22',
-      rating: 'poop',
+      rating: 3,
       responses: '0',
-      enabled: 'true',
+      enabled: true,
       share: 'www.poop.com',
-    },
-    {
-      key: '2',
-      name: 'John',
-      age: 42,
-      address: '10 Downing Street',
     },
   ]
 
@@ -41,11 +35,7 @@ export default function ManageSamples() {
       title: 'Sample #',
       dataIndex: 'sampleID',
       key: 'sampleID',
-      render: text => (
-        <div className="text-sky-400">
-          <a>{text}</a>
-        </div>
-      ),
+      render: text => <a href={text}>{text}</a>,
     },
     {
       title: 'Vendor',
@@ -62,6 +52,7 @@ export default function ManageSamples() {
       title: 'Rating',
       dataIndex: 'rating',
       key: 'rating',
+      render: rating => <Rate disabled defaultValue={rating} />,
     },
     {
       title: 'Responses',
@@ -72,11 +63,22 @@ export default function ManageSamples() {
       title: 'Enable Tasting',
       dataIndex: 'enabled',
       key: 'enabled',
+      render: enabled => {
+        function onChange(checked) {
+          console.log(`switch to ${checked}`)
+        }
+        return (
+          <div>
+            <Switch defaultChecked={enabled} onChange={onChange} />
+          </div>
+        )
+      },
     },
     {
       title: 'Share Tasting',
       dataIndex: 'share',
       key: 'share',
+      render: link => <a href={link}>Link/QR Code</a>,
     },
   ]
 
@@ -107,7 +109,7 @@ export default function ManageSamples() {
             >
               <Descriptions size="small" column={3}>
                 <Descriptions.Item>
-                  <Space>
+                  <Space className="p-20">
                     <Button type="primary" icon={<CheckSquareOutlined />}>
                       Compare Selected Results
                     </Button>
