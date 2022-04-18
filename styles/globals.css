@@ -10,3 +10,7 @@
 .ant-btn-primary:hover {
   background: #48a7ff !important;
 }
+
+.ant-switch-checked {
+  background: #48a7ff !important;
+}
