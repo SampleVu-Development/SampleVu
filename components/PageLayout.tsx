@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import Header from './Header'
-import { Layout, PageHeader } from 'antd'
+import { Layout, Button, PageHeader } from 'antd'
 import Navbar from './Navbar'
 
 type PageProps = {
@@ -25,6 +25,7 @@ const { Sider } = Layout
 const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
   <Layout data-testid="PageLayout">
     <Header pageName={pageName} />
+
     <Layout>
       <Sider className="hidden bg-white md:block" width={190}>
         <Navbar />

@@ -13,7 +13,7 @@ export default function CreateQuestion({ callback }) {
   return (
     <>
       <div className="flex justify-center p-2.5 text-center">
-        <Button className="rounded-xl border-gray-300" bordered={false} onClick={createQuestion}>
+        <Button className="border-gray-300 rounded-xl" bordered={false} onClick={createQuestion}>
           <PlusCircleOutlined />
           Add Question
         </Button>
