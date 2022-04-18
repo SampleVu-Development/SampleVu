@@ -19,7 +19,7 @@ const { Header } = Layout
 const TopHeader = ({ pageName }) => {
   const header = (
     <Header data-testid="Header" className="px-15 sticky top-0 z-30 w-full">
-      <div className="text-slate-700 flex items-center justify-between">
+      <div className="flex items-center justify-between text-slate-700">
         <div className=" flex items-center">
           <span>
             <MenuOutlined className="text-2xl text-white" />
@@ -34,7 +34,7 @@ const TopHeader = ({ pageName }) => {
         <div className="flex items-center">
           <Dropdown overlay={DropDownMenu}>
             <div className="flex items-center">
-              <Avatar className=" float-right bg-purple" size="large">
+              <Avatar className=" bg-purple float-right" size="large">
                 {/* pass in user later  */}
                 FL
               </Avatar>
