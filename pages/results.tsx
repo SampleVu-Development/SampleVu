@@ -101,14 +101,14 @@ export default function Results() {
       <PageLayout pageName=" Results">
         <main className="p-2.5 text-center">
           <Row gutter={[16, 0]}>
-            <Col span={8}>
+            <Col flex="auto">
               <Card>
                 <PageHeader className="p-0" title="Overall Ranking"></PageHeader>
                 <Divider />
                 <Demo />
               </Card>
             </Col>
-            <Col span={16}>
+            <Col flex="auto">
               <Card>
                 <PageHeader className="p-0" title="Results by Question"></PageHeader>
                 <Divider />
