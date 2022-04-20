@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import Header from './Header'
-import { Layout, Button, PageHeader } from 'antd'
+import { Layout, Tabs, PageHeader } from 'antd'
 import Navbar from './Navbar'
 
 type PageProps = {
@@ -21,6 +21,7 @@ type PageProps = {
  * @param pageName {string} Current page name
  * @constructor
  */
+const { TabPane } = Tabs
 const { Sider } = Layout
 const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
   <Layout data-testid="PageLayout">
@@ -31,7 +32,20 @@ const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
         <Navbar />
       </Sider>
       <Layout>
-        <PageHeader title={pageName} className="bg-white" />
+        {pageName === 'Projects' ? (
+          <PageHeader
+            title={pageName}
+            className="bg-white"
+            footer={
+              <Tabs defaultActiveKey="1">
+                <TabPane tab="Ongoing" key="1" />
+                <TabPane tab="Completed" key="2" />
+              </Tabs>
+            }
+          ></PageHeader>
+        ) : (
+          <PageHeader title={pageName} className="bg-white" />
+        )}
         <div>{children}</div>
       </Layout>
     </Layout>
