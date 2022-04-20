@@ -32,7 +32,7 @@ const TopHeader = ({ pageName }) => {
 
         {/* this link should take user to user profile but for right now I'll just set it to "/"  */}
         <div className="flex items-center">
-          <Dropdown overlay={DropDownMenu}>
+          <Dropdown overlay={DropDownMenu} className="mr-10" placement="bottom">
             <div className="flex items-center">
               <Avatar className=" bg-purple float-right" size="large">
                 {/* pass in user later  */}
@@ -41,8 +41,6 @@ const TopHeader = ({ pageName }) => {
               <DownOutlined className="ml-2 text-2xl font-bold text-white" />
             </div>
           </Dropdown>
-
-          {/* <h1 className=" ml-3 text-white"> firstName L </h1> */}
         </div>
       </div>
     </Header>
