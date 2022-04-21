@@ -182,10 +182,9 @@ export default function ManageSamples() {
                 <Descriptions.Item>
                   <Space className="p-20">
                     <Button type="primary" icon={<CheckSquareOutlined />}>
-                      Compare Selected Results
+                      <a href="view-samples">View Results</a>
                     </Button>
                     <Button icon={<PlusOutlined />}>
-                      {' '}
                       <a href="add-samples">Add Sample</a>
                     </Button>
                   </Space>
