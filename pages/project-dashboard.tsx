@@ -11,12 +11,12 @@ export default function ProjectDashboard() {
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </head>
 
-      <PageLayout pageName="Winter Frost">
+      <PageLayout pageName="__Passed in project name">
         <div className="xs:h-screen m-3">
           <Row gutter={[16, 16]}>
             <Col flex="auto">
               <Card
-                className="mb-5 xl:h-full"
+                className="mb-5 lg:h-full"
                 title="Project Details"
                 extra={
                   <Button type="link" size="large">
@@ -76,7 +76,7 @@ export default function ProjectDashboard() {
               </Row>
               <Col flex="auto">
                 <Card
-                  className="mb-5"
+                  className="mb-5 w-full"
                   title="Samples"
                   extra={
                     <Button type="link" size="large">
