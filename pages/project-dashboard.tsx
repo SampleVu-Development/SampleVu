@@ -12,11 +12,11 @@ export default function ProjectDashboard() {
       </head>
 
       <PageLayout pageName="Winter Frost">
-        <div className="m-3 h-screen">
+        <div className="xs:h-screen m-3">
           <Row gutter={[16, 16]}>
             <Col flex="auto">
               <Card
-                className="mb-5 xl:h-screen"
+                className="mb-5 xl:h-full"
                 title="Project Details"
                 extra={
                   <Button type="link" size="large">
@@ -76,7 +76,7 @@ export default function ProjectDashboard() {
               </Row>
               <Col flex="auto">
                 <Card
-                  className="mb-5 w-full"
+                  className="mb-5"
                   title="Samples"
                   extra={
                     <Button type="link" size="large">
