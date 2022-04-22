@@ -82,10 +82,21 @@ export default function ManageSamples() {
   ]
 
   const [displayData, setDisplayData] = useState([...dataSource])
-  function onChange(index, e) {
-    console.log(`switch to ${index}`)
-    dataSource[index].enabled = e
-    setDisplayData([...dataSource])
+
+  function onChange(key, e, i) {
+    for (let i = 0; i < dataSource.length; i++) {
+      if (dataSource[i].key == key) {
+        dataSource[i].enabled = e
+        break
+      }
+    }
+    for (let i = 0; i < displayData.length; i++) {
+      if (displayData[i].key == key) {
+        displayData[i].enabled = e
+        break
+      }
+    }
+    setDisplayData([...displayData])
   }
 
   const columns = [
@@ -129,7 +140,7 @@ export default function ManageSamples() {
       render: (enabled, entryInfo, i) => {
         return (
           <div>
-            <Switch defaultChecked={enabled} onChange={e => onChange(i, e)} />
+            <Switch defaultChecked={enabled} onChange={e => onChange(entryInfo.key, e, i)} />
           </div>
         )
       },
