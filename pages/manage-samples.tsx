@@ -25,7 +25,8 @@ import { useState } from 'react'
 const { Search } = Input
 
 export default function ManageSamples() {
-  const sampleName: String = 'Winter Frost'
+  const projectName: String = 'Winter Frost'
+  const projectID: String = 'ProjectWinterFrostID'
   const onSearch = text => {
     setDisplayData(
       dataSource.filter(
@@ -92,7 +93,7 @@ export default function ManageSamples() {
       title: 'Sample #',
       dataIndex: 'sampleID',
       key: 'sampleID',
-      render: text => <a href={text}>{text}</a>,
+      render: text => <a href={`view-sample?sample=${text}`}>{text}</a>,
       sorter: (a, b) => a.responses - b.responses,
     },
     {
@@ -144,7 +145,7 @@ export default function ManageSamples() {
       key: 'share',
       render: (link, entryInfo, i) => {
         if (entryInfo.enabled)
-          return <a href={`view-sample?id=${entryInfo.sampleID}`}>Link/QR Code</a>
+          return <a href={`view-survey/${projectID}?sample=${entryInfo.sampleID}`}>Link/QR Code</a>
         else return <p className="text-gray-400">Link/QR Code</p>
       },
     },
@@ -171,7 +172,7 @@ export default function ManageSamples() {
           <Card>
             <PageHeader
               className="p-0"
-              title={`Samples - ${sampleName}`}
+              title={`Samples - ${projectName}`}
               extra={[
                 <Search
                   placeholder="input search text"
