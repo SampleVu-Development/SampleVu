@@ -46,7 +46,7 @@ export default function ManageSamples() {
       rating: 3,
       responses: 4,
       enabled: true,
-      share: 'www.awesome.com',
+      share: '',
     },
     {
       key: '2',
@@ -56,7 +56,7 @@ export default function ManageSamples() {
       rating: 4,
       responses: 1,
       enabled: false,
-      share: 'www.cool.com',
+      share: '',
     },
     {
       key: '3',
@@ -66,7 +66,7 @@ export default function ManageSamples() {
       rating: 5,
       responses: 3,
       enabled: false,
-      share: 'www.great.com',
+      share: '',
     },
     {
       key: '4',
@@ -76,11 +76,16 @@ export default function ManageSamples() {
       rating: 5,
       responses: 2,
       enabled: true,
-      share: 'www.great.com',
+      share: '',
     },
   ]
 
   const [displayData, setDisplayData] = useState([...dataSource])
+  function onChange(index, e) {
+    console.log(`switch to ${index}`)
+    dataSource[index].enabled = e
+    setDisplayData([...dataSource])
+  }
 
   const columns = [
     {
@@ -88,6 +93,7 @@ export default function ManageSamples() {
       dataIndex: 'sampleID',
       key: 'sampleID',
       render: text => <a href={text}>{text}</a>,
+      sorter: (a, b) => a.responses - b.responses,
     },
     {
       title: 'Vendor',
@@ -119,13 +125,10 @@ export default function ManageSamples() {
       title: 'Enable Tasting',
       dataIndex: 'enabled',
       key: 'enabled',
-      render: enabled => {
-        function onChange(checked) {
-          console.log(`switch to ${checked}`)
-        }
+      render: (enabled, entryInfo, i) => {
         return (
           <div>
-            <Switch defaultChecked={enabled} onChange={onChange} />
+            <Switch defaultChecked={enabled} onChange={e => onChange(i, e)} />
           </div>
         )
       },
@@ -139,7 +142,11 @@ export default function ManageSamples() {
       title: 'Share Tasting',
       dataIndex: 'share',
       key: 'share',
-      render: link => <a href={link}>Link/QR Code</a>,
+      render: (link, entryInfo, i) => {
+        if (entryInfo.enabled)
+          return <a href={`view-sample?id=${entryInfo.sampleID}`}>Link/QR Code</a>
+        else return <p className="text-gray-400">Link/QR Code</p>
+      },
     },
   ]
 
@@ -181,10 +188,13 @@ export default function ManageSamples() {
               <Descriptions size="small" column={3}>
                 <Descriptions.Item>
                   <Space className="p-20">
-                    <Button type="primary" icon={<CheckSquareOutlined />}>
+                    <Button
+                      type="primary"
+                      icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
+                    >
                       <a href="view-samples">View Results</a>
                     </Button>
-                    <Button icon={<PlusOutlined />}>
+                    <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
                       <a href="add-samples">Add Sample</a>
                     </Button>
                   </Space>
