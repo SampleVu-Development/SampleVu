@@ -8,7 +8,7 @@ const HeaderDrawer = ({ visible, setVisible }) => {
     setVisible(false)
   }
   return (
-    <Drawer title="Nagivation" placement="left" width={400} onClose={onClose} visible={visible}>
+    <Drawer title="Nagivation" placement="left" width={300} onClose={onClose} visible={visible}>
       <ul>
         <li>
           <a className="flex items-center  align-middle text-[17px]">
