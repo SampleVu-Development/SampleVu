@@ -79,6 +79,26 @@ export default function ManageSamples() {
       enabled: true,
       share: '',
     },
+    {
+      key: '5',
+      sampleID: '33333-111',
+      vendor: 'ddddd',
+      date: '04/01/21',
+      rating: 5,
+      responses: 3,
+      enabled: false,
+      share: '',
+    },
+    {
+      key: '6',
+      sampleID: '22222-111',
+      vendor: 'bbbb',
+      date: '12/30/08',
+      rating: 5,
+      responses: 2,
+      enabled: true,
+      share: '',
+    },
   ]
 
   const [displayData, setDisplayData] = useState([...dataSource])
@@ -178,12 +198,12 @@ export default function ManageSamples() {
         <title>SampleVu</title>
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </Head>
-      <PageLayout pageName="">
+      <PageLayout pageName="Manage Samples">
         <main className="p-2.5 text-center">
           <Card>
             <PageHeader
-              className="p-0"
-              title={`Samples - ${projectName}`}
+              className="sticky top-12 z-30 w-full bg-white md:top-20 "
+              title={`Manage Samples - ${projectName}`}
               extra={[
                 <Search
                   placeholder="input search text"
@@ -199,7 +219,7 @@ export default function ManageSamples() {
             >
               <Descriptions size="small" column={3}>
                 <Descriptions.Item>
-                  <Space className="p-20">
+                  <Space className="p-2">
                     <Button
                       type="primary"
                       icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
