@@ -14,3 +14,10 @@
 .ant-switch-checked {
   background: #48a7ff !important;
 }
+
+.ant-btn-dangerous {
+  background: #ff4d4f !important;
+}
+.ant-btn-dangerous:hover {
+  background: #ff4d4f !important;
+}

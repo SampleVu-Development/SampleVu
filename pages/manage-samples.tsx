@@ -220,15 +220,19 @@ export default function ManageSamples() {
               <Descriptions size="small" column={3}>
                 <Descriptions.Item>
                   <Space className="p-2">
-                    <Button
-                      type="primary"
-                      icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
-                    >
-                      <a href="view-samples">View Results</a>
-                    </Button>
-                    <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
-                      <a href="add-samples">Add Sample</a>
-                    </Button>
+                    <a href="view-results">
+                      <Button
+                        type="primary"
+                        icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
+                      >
+                        View Results
+                      </Button>
+                    </a>
+                    <a href="create-samples">
+                      <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
+                        Add Sample
+                      </Button>
+                    </a>
                   </Space>
                 </Descriptions.Item>
               </Descriptions>
