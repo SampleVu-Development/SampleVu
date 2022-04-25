@@ -120,7 +120,7 @@ export default function ProjectDashboard() {
                 >
                   {dummySampleData == null && (
                     <div className="flex flex-col items-center p-5">
-                      && <Empty />
+                      <Empty />
                     </div>
                   )}
                   {dummySampleData != null && (

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import PageLayout from '../../components/PageLayout'
 import { Card, PageHeader, List, Button } from 'antd'
-import { FileOutlined } from '@ant-design/icons'
+import { FileOutlined, DeleteOutlined } from '@ant-design/icons'
 
 export default function ViewSample() {
   const router = useRouter()

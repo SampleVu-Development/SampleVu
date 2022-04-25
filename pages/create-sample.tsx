@@ -3,8 +3,9 @@ import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
 import CreateSampleForm from '../components/CreateSampleForm'
 import { Button, Space } from 'antd'
-import { DeleteOutlined, CheckOutlined } from '@ant-design/icons'
+import { StopOutlined, DeleteOutlined, CheckOutlined } from '@ant-design/icons'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export default function CreateSample() {
   const defaultSample = {
@@ -14,17 +15,21 @@ export default function CreateSample() {
     instructions: '',
     documents: '',
   }
+  const router = useRouter()
+  const { sample } = router.query
+
+  const deleteButton = sample == null ? <StopOutlined /> : <DeleteOutlined />
+  const titleText = sample == null ? 'Create New Sample' : 'Edit Sample'
+  const formText = sample == null ? 'Create New Sample' : `Edit Sample: ${sample}`
 
   const [sampleDetails, updateSampleDetails] = useState({ ...defaultSample })
 
   const updateSample = (event: any, id: string) => {
-    console.log(event)
     let newArr = { ...sampleDetails }
     if (id != 'documents') newArr[id] = event.target.value
     else newArr[id] = event
     updateSampleDetails(newArr)
   }
-  console.log(sampleDetails)
 
   const finalizeSample = () => {
     console.log('finalize samples')
@@ -41,16 +46,16 @@ export default function CreateSample() {
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </Head>
 
-      <PageLayout pageName="Create Sample">
+      <PageLayout pageName={titleText}>
         <main id="sample-main-container" className="p-6 text-center">
           <div id="sample-view">
-            <CreateSampleForm update={updateSample} data={sampleDetails} />
+            <CreateSampleForm title={formText} update={updateSample} data={sampleDetails} />
           </div>
           <Space>
             <a href="manage-samples">
               <Button
                 onClick={cancelSample}
-                icon={<DeleteOutlined className="" />}
+                icon={deleteButton}
                 className="top-3"
                 type="primary"
                 danger

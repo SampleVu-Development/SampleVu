@@ -9,7 +9,7 @@ const formItemLayout = {
   wrapperCol: { span: 14 },
 }
 
-export default function CreateSampleForm({ update, data }) {
+export default function CreateSampleForm({ update, data, title }) {
   const normFile = (e: any) => {
     // console.log('Upload event:', e)
     if (Array.isArray(e)) {
@@ -20,8 +20,8 @@ export default function CreateSampleForm({ update, data }) {
   return (
     <>
       <br />
-      <Card title="Create New Sample" className="left-1/4  max-w-[50%]">
-        <Form title="Create New Sample" name="sample-form" {...formItemLayout}>
+      <Card title={title} className="left-1/4  max-w-[50%]">
+        <Form title={title} name="sample-form" {...formItemLayout}>
           <Form.Item label="Company name">
             <Form.Item name="company-name" noStyle>
               <Input

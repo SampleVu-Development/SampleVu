@@ -199,6 +199,14 @@ export default function ManageSamples() {
         else return <p className="text-gray-400">Link/QR Code</p>
       },
     },
+    {
+      title: 'edit',
+      dataIndex: 'edit',
+      key: 'edit',
+      render: (link, entryInfo, i) => {
+        return <a href={`create-sample?sample=${entryInfo.sampleID}`}>Edit</a>
+      },
+    },
   ]
 
   const rowSelection = {
