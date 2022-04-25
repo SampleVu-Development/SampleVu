@@ -272,7 +272,7 @@ export default function Results() {
       </Head>
       <PageLayout pageName=" Results">
         <main className="p-2.5 text-center">
-          <Row gutter={[16, 0]}>
+          <Row gutter={[16, 16]} justify="center">
             <Col flex="auto">
               <Card>
                 <PageHeader className="p-0" title="Overall Ranking"></PageHeader>
@@ -280,7 +280,7 @@ export default function Results() {
                 <SampleTable />
               </Card>
             </Col>
-            <Col flex="auto">
+            <Col md={16}>
               <Card>
                 <PageHeader className="p-0" title="Results by Question"></PageHeader>
                 <Divider />
