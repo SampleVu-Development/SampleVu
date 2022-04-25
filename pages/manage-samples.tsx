@@ -54,7 +54,7 @@ export default function ManageSamples() {
 
   const [selectionType, setSelectionType] = useState('checkbox')
 
-  const dataSource = [
+  const loadedData = [
     {
       key: '1',
       sampleID: '59468-622',
@@ -78,7 +78,7 @@ export default function ManageSamples() {
     {
       key: '3',
       sampleID: '33333-111',
-      vendor: 'ddddd',
+      vendor: 'dddddgang',
       date: '04/01/21',
       rating: 5,
       responses: 3,
@@ -117,21 +117,25 @@ export default function ManageSamples() {
     },
   ]
 
+  const [dataSource, setDataSource] = useState([...loadedData])
+
   const [displayData, setDisplayData] = useState([...dataSource])
 
   function onChange(key, e, i) {
     for (let i = 0; i < dataSource.length; i++) {
       if (dataSource[i].key == key) {
-        dataSource[i].enabled = e
+        dataSource[i]['enabled'] = e
         break
       }
     }
     for (let i = 0; i < displayData.length; i++) {
       if (displayData[i].key == key) {
-        displayData[i].enabled = e
+        displayData[i]['enabled'] = e
         break
       }
     }
+
+    setDataSource([...dataSource])
     setDisplayData([...displayData])
   }
 
