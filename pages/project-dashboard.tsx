@@ -111,7 +111,7 @@ export default function ProjectDashboard() {
               <Col flex="auto">
                 <Card
                   className="mb-5 w-full"
-                  title="Samples"
+                  title={<a href="manage-samples">Samples</a>}
                   extra={
                     <Button type="link" size="large">
                       Edit

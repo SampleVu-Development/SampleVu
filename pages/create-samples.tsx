@@ -2,8 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
 import CreateSampleForm from '../components/CreateSampleForm'
-import { Button } from 'antd'
-import { PlusOutlined } from '@ant-design/icons'
+import { Button, Space } from 'antd'
+import { PlusOutlined, CheckOutlined } from '@ant-design/icons'
 import { useState, useEffect } from 'react'
 
 export default function CreateSamples() {
@@ -32,6 +32,10 @@ export default function CreateSamples() {
     let newArr = [...sampleArr]
     newArr.splice(index, 1)
     updateSampleArr(newArr)
+  }
+
+  const finalizeSamples = () => {
+    console.log('finalize samples')
   }
 
   useEffect(() => {
@@ -71,14 +75,27 @@ export default function CreateSamples() {
               </>
             ))}
           </div>
-          <Button
-            onClick={addSample}
-            icon={<PlusOutlined className="bottom-0.5" />}
-            className="top-3"
-            type="primary"
-          >
-            Add Sample
-          </Button>
+          <Space>
+            <Button
+              onClick={addSample}
+              icon={<PlusOutlined className="" />}
+              className="top-3"
+              type="primary"
+            >
+              Add Sample
+            </Button>
+
+            <a href="manage-samples">
+              <Button
+                onClick={finalizeSamples}
+                icon={<CheckOutlined className="" />}
+                className="top-3"
+                type="primary"
+              >
+                Done
+              </Button>
+            </a>
+          </Space>
         </main>
       </PageLayout>
     </>
