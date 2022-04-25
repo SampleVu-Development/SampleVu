@@ -271,19 +271,15 @@ export default function Results() {
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </Head>
       <PageLayout pageName=" Results">
-        <main className="p-2.5 text-center">
+        <main className="p-2.5">
           <Row gutter={[16, 16]} justify="center">
-            <Col flex="auto">
-              <Card>
-                <PageHeader className="p-0" title="Overall Ranking"></PageHeader>
-                <Divider />
+            <Col xs={24} xl={12}>
+              <Card title="Overall Ranking" className="h-full">
                 <SampleTable />
               </Card>
             </Col>
-            <Col md={16}>
-              <Card>
-                <PageHeader className="p-0" title="Results by Question"></PageHeader>
-                <Divider />
+            <Col xs={24} xl={12}>
+              <Card title="Results by Question">
                 <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
                   <Select
                     showSearch
@@ -302,7 +298,7 @@ export default function Results() {
                     <Option value="q4">Question 4: Rate the AROMA of this sample</Option>
                     <Option value="q5">Question 5: How would you rate this sample OVERALL?</Option>
                   </Select>
-                  <div id="Charts"></div>
+                  <div id="Charts" className=""></div>
                 </Space>
               </Card>
             </Col>
