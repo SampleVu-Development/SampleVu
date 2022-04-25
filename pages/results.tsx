@@ -272,14 +272,14 @@ export default function Results() {
       </Head>
       <PageLayout pageName=" Results">
         <main className="p-2.5">
-          <Row gutter={[16, 16]} justify="center">
+          <Row gutter={[16, 16]} justify="center" className="h-screen">
             <Col xs={24} xl={12}>
               <Card title="Overall Ranking" className="h-full">
                 <SampleTable />
               </Card>
             </Col>
             <Col xs={24} xl={12}>
-              <Card title="Results by Question">
+              <Card title="Results by Question" className="h-full">
                 <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
                   <Select
                     showSearch
@@ -298,7 +298,7 @@ export default function Results() {
                     <Option value="q4">Question 4: Rate the AROMA of this sample</Option>
                     <Option value="q5">Question 5: How would you rate this sample OVERALL?</Option>
                   </Select>
-                  <div id="Charts" className=""></div>
+                  <div id="Charts"></div>
                 </Space>
               </Card>
             </Col>
