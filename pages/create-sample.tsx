@@ -9,9 +9,9 @@ import { useRouter } from 'next/router'
 
 export default function CreateSample() {
   const defaultSample = {
-    'company-name': '',
+    'company-name': 'awesome',
     'sample-num': '',
-    'crm-id': '',
+    'crm-id': 'rekt',
     instructions: '',
     documents: '',
   }

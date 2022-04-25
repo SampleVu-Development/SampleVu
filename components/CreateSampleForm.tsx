@@ -26,7 +26,7 @@ export default function CreateSampleForm({ update, data, title }) {
             <Form.Item name="company-name" noStyle>
               <Input
                 placeholder="type name here..."
-                value={data['company-name']}
+                defaultValue={data['company-name']}
                 onChange={e => update(e, 'company-name')}
               />
             </Form.Item>
@@ -36,7 +36,7 @@ export default function CreateSampleForm({ update, data, title }) {
             <Form.Item name="sample-num" noStyle>
               <Input
                 placeholder="type name here..."
-                value={data['sample-num']}
+                defaultValue={data['sample-num']}
                 onChange={e => update(e, 'sample-num')}
               />
             </Form.Item>
@@ -46,7 +46,7 @@ export default function CreateSampleForm({ update, data, title }) {
             <Form.Item name="crm-id" noStyle>
               <Input
                 placeholder="type id here..."
-                value={data['crm-id']}
+                defaultValue={data['crm-id']}
                 onChange={e => update(e, 'crm-id')}
               />
             </Form.Item>
@@ -56,7 +56,7 @@ export default function CreateSampleForm({ update, data, title }) {
             <Form.Item name="instructions" noStyle>
               <TextArea
                 placeholder="type instructions here..."
-                value={data['instructions']}
+                defaultValue={data['instructions']}
                 onChange={e => update(e, 'instructions')}
               />
             </Form.Item>
