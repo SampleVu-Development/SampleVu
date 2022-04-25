@@ -2,8 +2,42 @@ import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
 import { Row, Col, Card, Button, Empty, Radio } from 'antd'
 import { FormOutlined, UsergroupAddOutlined, FileTextOutlined } from '@ant-design/icons'
+import ProjectDashboardSamplesTable from '../components/ProjectDashboardSamplesTable'
 
 export default function ProjectDashboard() {
+  const dummySampleData = [
+    {
+      key: '1',
+      sampleID: '59468-622',
+      vendor: 'acataaa',
+      date: '05/19/20',
+      rating: 3,
+      responses: 4,
+      enabled: true,
+      share: 'https://url-1.com',
+    },
+    {
+      key: '2',
+      sampleID: '14882-622',
+      vendor: 'ccccataa',
+      date: '03/09/22',
+      rating: 4,
+      responses: 1,
+      enabled: false,
+      share: 'https://url-2.com',
+    },
+    {
+      key: '3',
+      sampleID: '33333-111',
+      vendor: 'ddddd',
+      date: '04/01/21',
+      rating: 5,
+      responses: 3,
+      enabled: false,
+      share: 'https://url-3.com',
+    },
+  ]
+
   return (
     <>
       <head>
@@ -84,9 +118,14 @@ export default function ProjectDashboard() {
                     </Button>
                   }
                 >
-                  <div className="flex flex-col items-center p-5">
-                    <Empty />
-                  </div>
+                  {dummySampleData == null && (
+                    <div className="flex flex-col items-center p-5">
+                      && <Empty />
+                    </div>
+                  )}
+                  {dummySampleData != null && (
+                    <ProjectDashboardSamplesTable data={dummySampleData} />
+                  )}
                 </Card>
               </Col>
             </Col>
