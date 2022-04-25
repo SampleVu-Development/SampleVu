@@ -68,7 +68,6 @@ export default function CreateSamples() {
                   data={el}
                   numSamples={sampleArr.length}
                 />
-                <div>this is sample num: {el['sample-num']}</div>
               </>
             ))}
           </div>

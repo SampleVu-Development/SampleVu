@@ -9,7 +9,7 @@ import {
   Table,
   Rate,
   Switch,
-  Checkbox,
+  Modal,
 } from 'antd'
 import {
   PlusOutlined,
@@ -27,6 +27,22 @@ const { Search } = Input
 export default function ManageSamples() {
   const projectName: String = 'Winter Frost'
   const projectID: String = 'ProjectWinterFrostID'
+
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [modalContent, setModalContent] = useState(null)
+  const showModal = index => {
+    setModalContent(displayData[index])
+    setIsModalVisible(true)
+  }
+
+  const handleOk = () => {
+    setIsModalVisible(false)
+  }
+
+  const handleCancel = () => {
+    setIsModalVisible(false)
+  }
+
   const onSearch = text => {
     setDisplayData(
       dataSource.filter(
@@ -47,7 +63,7 @@ export default function ManageSamples() {
       rating: 3,
       responses: 4,
       enabled: true,
-      share: '',
+      share: 'https://url-1.com',
     },
     {
       key: '2',
@@ -57,7 +73,7 @@ export default function ManageSamples() {
       rating: 4,
       responses: 1,
       enabled: false,
-      share: '',
+      share: 'https://url-2.com',
     },
     {
       key: '3',
@@ -67,7 +83,7 @@ export default function ManageSamples() {
       rating: 5,
       responses: 3,
       enabled: false,
-      share: '',
+      share: 'https://url-3.com',
     },
     {
       key: '4',
@@ -77,7 +93,7 @@ export default function ManageSamples() {
       rating: 5,
       responses: 2,
       enabled: true,
-      share: '',
+      share: 'https://url-4.com',
     },
     {
       key: '5',
@@ -87,7 +103,7 @@ export default function ManageSamples() {
       rating: 5,
       responses: 3,
       enabled: false,
-      share: '',
+      share: 'https://url-5.com',
     },
     {
       key: '6',
@@ -97,7 +113,7 @@ export default function ManageSamples() {
       rating: 5,
       responses: 2,
       enabled: true,
-      share: '',
+      share: 'https://url-6.com',
     },
   ]
 
@@ -175,8 +191,7 @@ export default function ManageSamples() {
       dataIndex: 'share',
       key: 'share',
       render: (link, entryInfo, i) => {
-        if (entryInfo.enabled)
-          return <a href={`view-survey/${projectID}?sample=${entryInfo.sampleID}`}>Link/QR Code</a>
+        if (entryInfo.enabled) return <a onClick={() => showModal(i)}>Link/QR Code</a>
         else return <p className="text-gray-400">Link/QR Code</p>
       },
     },
@@ -220,7 +235,7 @@ export default function ManageSamples() {
               <Descriptions size="small" column={3}>
                 <Descriptions.Item>
                   <Space className="p-2">
-                    <a href="view-results">
+                    <a href="results">
                       <Button
                         type="primary"
                         icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
@@ -248,6 +263,10 @@ export default function ManageSamples() {
             ;
           </Card>
         </main>
+
+        <Modal title="Basic Modal" visible={isModalVisible} footer={null} onCancel={handleCancel}>
+          {modalContent !== null && <a href={modalContent.share}>{modalContent.share}</a>}
+        </Modal>
       </PageLayout>
     </>
   )
