@@ -66,7 +66,7 @@ export default function ProjectDashboard() {
                 <div className="flex flex-col items-center p-5">
                   <FormOutlined style={{ fontSize: '170%' }} className="m-2" />
                   <p className="m-3 text-lg text-blue-500">Customize Project Details</p>
-                  <Button type="primary" size="large">
+                  <Button type="primary" size="large" disabled={dummySampleData.length == 0}>
                     Create Now
                   </Button>
                 </div>
@@ -87,7 +87,7 @@ export default function ProjectDashboard() {
                     <div className="flex flex-col items-center p-5">
                       <FileTextOutlined style={{ fontSize: '170%' }} className="m-2" />
                       <p className="m-3 text-lg text-blue-500">Create New Survey</p>
-                      <Button type="primary" size="large">
+                      <Button type="primary" size="large" disabled={dummySampleData.length == 0}>
                         Add Survey
                       </Button>
                     </div>
@@ -106,7 +106,7 @@ export default function ProjectDashboard() {
                     <div className="flex flex-col items-center p-5">
                       <UsergroupAddOutlined style={{ fontSize: '170%' }} className="m-2" />
                       <p className="m-3 text-lg text-blue-500">Add Internal Collaborators</p>
-                      <Button type="primary" size="large">
+                      <Button type="primary" size="large" disabled={dummySampleData.length == 0}>
                         Add Now
                       </Button>
                     </div>
