@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
-import { Row, Col, Card, Button, Empty, Radio } from 'antd'
-import { FormOutlined, UsergroupAddOutlined, FileTextOutlined } from '@ant-design/icons'
+import { Row, Col, Card, Button, Empty, Space } from 'antd'
+import {
+  FormOutlined,
+  UsergroupAddOutlined,
+  FileTextOutlined,
+  PlusOutlined,
+} from '@ant-design/icons'
 import ProjectDashboardSamplesTable from '../components/ProjectDashboardSamplesTable'
 
 export default function ProjectDashboard() {
@@ -111,19 +116,30 @@ export default function ProjectDashboard() {
               <Col flex="auto">
                 <Card
                   className="mb-5 w-full"
-                  title={<a href="manage-samples">Samples</a>}
+                  title="Samples"
                   extra={
-                    <Button type="link" size="large">
-                      Edit
-                    </Button>
+                    <Space>
+                      <Button
+                        disabled={dummySampleData.length == 0}
+                        type="primary"
+                        icon={<PlusOutlined className="relative bottom-0.5 p-1" />}
+                      >
+                        Add Samples
+                      </Button>
+                      <Button disabled={dummySampleData.length == 0}>
+                        <a href="manage-samples"> Manage Sample</a>
+                      </Button>
+                      <Button disabled={dummySampleData.length == 0}>
+                        <a href="results"> View Results</a>
+                      </Button>
+                    </Space>
                   }
                 >
-                  {dummySampleData == null && (
+                  {dummySampleData.length == 0 ? (
                     <div className="flex flex-col items-center p-5">
                       <Empty />
                     </div>
-                  )}
-                  {dummySampleData != null && (
+                  ) : (
                     <ProjectDashboardSamplesTable data={dummySampleData} />
                   )}
                 </Card>
