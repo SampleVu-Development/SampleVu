@@ -247,7 +247,7 @@ export default function ManageSamples() {
                         View Results
                       </Button>
                     </a>
-                    <a href="create-samples">
+                    <a href="create-sample">
                       <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
                         Add Sample
                       </Button>
