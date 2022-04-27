@@ -1,10 +1,25 @@
 import React from 'react'
 
-import { Button, Tabs, Input, Modal, Select, Space } from 'antd'
+import { Button, Tabs, Input, Modal, Select, Space, Divider, List, Avatar } from 'antd'
 import { TeamOutlined, PlusOutlined, CopyOutlined } from '@ant-design/icons'
 
 const { TabPane } = Tabs
 const { Option } = Select
+const data = [
+  {
+    title: 'Some person 1',
+  },
+  {
+    title: 'Some person 2',
+  },
+  {
+    title: 'Some Person 3',
+  },
+  {
+    title: 'Some Person 4',
+  },
+]
+
 const AddCollaboratorModal = ({ isModalVisible, setIsModalVisible }) => {
   function handleChange(value) {
     console.log(`selected ${value}`)
@@ -29,12 +44,11 @@ const AddCollaboratorModal = ({ isModalVisible, setIsModalVisible }) => {
       ]}
       visible={isModalVisible}
       onCancel={handleCancel}
-      width={1000}
+      width={700}
       footer={[
         <a className="flex w-full items-center justify-center">
           <CopyOutlined className="pr-2" />
           Copy Link
-          {/* </Space> */}
         </a>,
       ]}
     >
@@ -54,6 +68,23 @@ const AddCollaboratorModal = ({ isModalVisible, setIsModalVisible }) => {
           </Space>
         </Input.Group>
       </div>
+      <Divider />
+      <List
+        itemLayout="horizontal"
+        dataSource={data}
+        renderItem={item => (
+          <List.Item>
+            <List.Item.Meta
+              avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+              title={<a href="https://ant.design">{item.title}</a>}
+            />
+            <Select defaultValue="Can Edit" style={{ width: 120 }} onChange={handleChange}>
+              <Option value="Can Edit">Can Edit</Option>
+              <Option value="Can View">Can View</Option>
+            </Select>
+          </List.Item>
+        )}
+      />
     </Modal>
   )
 }
