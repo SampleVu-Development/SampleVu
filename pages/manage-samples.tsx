@@ -227,44 +227,40 @@ export default function ManageSamples() {
       </Head>
       <PageLayout pageName="Manage Samples">
         <main className="p-2.5 text-center">
+          <PageHeader
+            className="sticky w-full bg-white sm:top-0 md:top-20  md:z-30"
+            title={`Manage Samples - ${projectName}`}
+            extra={[
+              <Search placeholder="input search text" onSearch={onSearch} style={{ width: 200 }} />,
+              <Button className="border-transparent" icon={<ReloadOutlined />}></Button>,
+              <Button className="border-transparent" icon={<ColumnHeightOutlined />}></Button>,
+              <Button className="border-transparent" icon={<SettingOutlined />}></Button>,
+              <Button className="border-transparent" icon={<ExpandOutlined />}></Button>,
+            ]}
+          >
+            <Descriptions size="small" column={3}>
+              <Descriptions.Item>
+                <Space className="p-2">
+                  <a href="results">
+                    <Button
+                      type="primary"
+                      icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
+                    >
+                      View Results
+                    </Button>
+                  </a>
+                  <a href="create-sample">
+                    <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
+                      Add Sample
+                    </Button>
+                  </a>
+                </Space>
+              </Descriptions.Item>
+            </Descriptions>
+          </PageHeader>
           <Card>
-            <PageHeader
-              className="sticky top-12 z-30 w-full bg-white md:top-20 "
-              title={`Manage Samples - ${projectName}`}
-              extra={[
-                <Search
-                  placeholder="input search text"
-                  onSearch={onSearch}
-                  style={{ width: 200 }}
-                />,
-
-                <Button className="border-transparent" icon={<ReloadOutlined />}></Button>,
-                <Button className="border-transparent" icon={<ColumnHeightOutlined />}></Button>,
-                <Button className="border-transparent" icon={<SettingOutlined />}></Button>,
-                <Button className="border-transparent" icon={<ExpandOutlined />}></Button>,
-              ]}
-            >
-              <Descriptions size="small" column={3}>
-                <Descriptions.Item>
-                  <Space className="p-2">
-                    <a href="results">
-                      <Button
-                        type="primary"
-                        icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
-                      >
-                        View Results
-                      </Button>
-                    </a>
-                    <a href="create-sample">
-                      <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
-                        Add Sample
-                      </Button>
-                    </a>
-                  </Space>
-                </Descriptions.Item>
-              </Descriptions>
-            </PageHeader>
             <Table
+              scroll={{ x: true }}
               dataSource={displayData}
               columns={columns}
               rowSelection={{

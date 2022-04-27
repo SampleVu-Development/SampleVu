@@ -130,7 +130,7 @@ export default function ProjectDashboard() {
                   className="mb-5 w-full"
                   title="Samples"
                   extra={
-                    <Space>
+                    <Space className="block md:flex">
                       <Button
                         disabled={dummySampleData.length == 0}
                         type="primary"

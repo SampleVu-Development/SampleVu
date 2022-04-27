@@ -36,5 +36,5 @@ export default function ProjectDashboardSamplesTable({ data }) {
       sorter: (a, b) => a.responses - b.responses,
     },
   ]
-  return <Table dataSource={data} columns={columns} />
+  return <Table scroll={{ x: true }} dataSource={data} columns={columns} />
 }

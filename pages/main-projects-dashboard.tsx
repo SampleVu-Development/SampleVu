@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
 import { Card, Row, Col, Typography } from 'antd'
-import { useState } from 'react'
 const { Text } = Typography
 const data = [
   {
