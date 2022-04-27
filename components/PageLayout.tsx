@@ -1,19 +1,14 @@
 import React, { ReactNode } from 'react'
 import Header from './Header'
-import { Layout, Tabs, PageHeader } from 'antd'
+import { Layout, Tabs, PageHeader, Input, Button } from 'antd'
+import { PlusOutlined } from '@ant-design/icons'
 import Navbar from './Navbar'
 
+const { Search } = Input
 type PageProps = {
   pageName: string
   children: ReactNode
 }
-
-/*
-  TODO: Layout -- possibly add Layout Component from antd
-  Styled wrapper for page to be passed
-
-  TODO: PageHeader -- onBack, go back
- */
 
 /**
  * Styled wrapper for pages, includes header/navbar
@@ -36,11 +31,19 @@ const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
           <PageHeader
             title={pageName}
             className="bg-white"
+            extra={[
+              <Button type="primary" className="border-transparent" icon={<PlusOutlined />}>
+                New Project
+              </Button>,
+            ]}
             footer={
-              <Tabs defaultActiveKey="1">
-                <TabPane tab="Ongoing" key="1" />
-                <TabPane tab="Completed" key="2" />
-              </Tabs>
+              <div className="flex justify-between">
+                <Tabs defaultActiveKey="1">
+                  <TabPane tab="Ongoing" key="1" />
+                  <TabPane tab="Completed" key="2" />
+                </Tabs>
+                <Search placeholder="input search text" style={{ width: 400 }} />
+              </div>
             }
           ></PageHeader>
         ) : (
