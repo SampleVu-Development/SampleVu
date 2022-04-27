@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { PageHeader, Button, Tabs, Input, Modal } from 'antd'
+import { PageHeader, Button, Tabs, Input, Modal, Form, Divider, Space } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
+import NewProjectModal from '../components/project/NewProjectModal'
 
 const { Search } = Input
 
@@ -13,13 +14,6 @@ const ProjectDashboardHeader = ({ pageName }) => {
     setIsModalVisible(true)
   }
 
-  const handleOk = () => {
-    setIsModalVisible(false)
-  }
-
-  const handleCancel = () => {
-    setIsModalVisible(false)
-  }
   return (
     <>
       <PageHeader
@@ -45,11 +39,7 @@ const ProjectDashboardHeader = ({ pageName }) => {
           </div>
         }
       ></PageHeader>
-      <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
+      <NewProjectModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />
     </>
   )
 }
