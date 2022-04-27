@@ -32,7 +32,7 @@ const TopHeader = ({ pageName }) => {
               onClick={() => setVisible(true)}
             />
           </span>
-          <a href="/project-dashboard" className=" flex p-4">
+          <a href="/main-projects-dashboard" className=" flex p-4">
             <Image
               src={logo}
               alt="logo"

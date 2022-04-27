@@ -50,7 +50,7 @@ export default function ProjectDashboard() {
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </head>
 
-      <PageLayout pageName="__Passed in project name">
+      <PageLayout pageName="Winter Frost">
         <div className="xs:h-screen m-3">
           <Row gutter={[16, 16]}>
             <Col flex="auto">

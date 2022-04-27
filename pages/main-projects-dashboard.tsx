@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
 import { Card, Row, Col, Typography } from 'antd'
-import { UserOutlined } from '@ant-design/icons'
+import { useState } from 'react'
 const { Text } = Typography
 const data = [
   {
@@ -49,25 +49,27 @@ export default function MainProjectsDashboard() {
               {data.map(d => {
                 return (
                   <Col xs={24} sm={12} lg={8}>
-                    <Card title={d.projectName} bordered={false} className="h-full">
-                      <div className="pb-9">
-                        <Typography.Title level={5} style={{ margin: 0 }}>
-                          Description
-                        </Typography.Title>
-                        {d.description}
-                      </div>
-                      {d.sampleDue.length == 0 ? (
-                        <>
-                          <Text type="secondary">Currently No Sample Due date</Text>
-                        </>
-                      ) : (
-                        <div>
-                          <Text type="secondary">Sample Due </Text>
-                          <br />
-                          <Text type="secondary">{d.sampleDue}</Text>
+                    <a href="/project-dashboard">
+                      <Card title={d.projectName} bordered={false} className="h-full">
+                        <div className="pb-9">
+                          <Typography.Title level={5} style={{ margin: 0 }}>
+                            Description
+                          </Typography.Title>
+                          {d.description}
                         </div>
-                      )}
-                    </Card>
+                        {d.sampleDue.length == 0 ? (
+                          <>
+                            <Text type="secondary">Currently No Sample Due date</Text>
+                          </>
+                        ) : (
+                          <div>
+                            <Text type="secondary">Sample Due </Text>
+                            <br />
+                            <Text type="secondary">{d.sampleDue}</Text>
+                          </div>
+                        )}
+                      </Card>
+                    </a>
                   </Col>
                 )
               })}
