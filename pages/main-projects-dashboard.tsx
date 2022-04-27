@@ -50,7 +50,11 @@ export default function MainProjectsDashboard() {
                 return (
                   <Col xs={24} sm={12} lg={8}>
                     <a href="/project-dashboard">
-                      <Card title={d.projectName} bordered={false} className="h-full">
+                      <Card
+                        title={d.projectName}
+                        bordered={false}
+                        className="h-full hover:shadow-lg"
+                      >
                         <div className="pb-9">
                           <Typography.Title level={5} style={{ margin: 0 }}>
                             Description
