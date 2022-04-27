@@ -7,9 +7,16 @@ import {
   FileTextOutlined,
   PlusOutlined,
 } from '@ant-design/icons'
+import { useState } from 'react'
 import ProjectDashboardSamplesTable from '../components/ProjectDashboardSamplesTable'
+import AddCollaboratorModal from '../components/project/AddCollaboratorModal'
 
 export default function ProjectDashboard() {
+  const [isModalVisible, setIsModalVisible] = useState(false)
+
+  const showModal = () => {
+    setIsModalVisible(true)
+  }
   const dummySampleData = [
     {
       key: '1',
@@ -106,7 +113,12 @@ export default function ProjectDashboard() {
                     <div className="flex flex-col items-center p-5">
                       <UsergroupAddOutlined style={{ fontSize: '170%' }} className="m-2" />
                       <p className="m-3 text-lg text-blue-500">Add Internal Collaborators</p>
-                      <Button type="primary" size="large" disabled={dummySampleData.length == 0}>
+                      <Button
+                        type="primary"
+                        size="large"
+                        disabled={dummySampleData.length == 0}
+                        onClick={showModal}
+                      >
                         Add Now
                       </Button>
                     </div>
@@ -147,6 +159,10 @@ export default function ProjectDashboard() {
             </Col>
           </Row>
         </div>
+        <AddCollaboratorModal
+          isModalVisible={isModalVisible}
+          setIsModalVisible={setIsModalVisible}
+        />
       </PageLayout>
     </>
   )
