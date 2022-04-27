@@ -1,8 +1,40 @@
 import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
-import { Card, Row, Col, Typography, Avatar, Tooltip } from 'antd'
+import { Card, Row, Col, Typography } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
-
+const { Text } = Typography
+const data = [
+  {
+    key: '1',
+    projectName: 'Winter Frost',
+    description: 'good stuff.... some sort of sport drink i think',
+    sampleDue: 'April 30, 2021',
+  },
+  {
+    key: '2',
+    projectName: 'Winter Frost 2.0',
+    description: 'good stuff.... some sort of sport drink i think',
+    sampleDue: 'April 30, 2022',
+  },
+  {
+    key: '3',
+    projectName: 'Winter Frost 3.0',
+    description: 'good stuff.... some sort of sport drink i think',
+    sampleDue: '',
+  },
+  {
+    key: '4',
+    projectName: 'Winter Frost 4.0',
+    description: 'good stuff.... some sort of sport drink i think',
+    sampleDue: 'April 30, 2022',
+  },
+  {
+    key: '5',
+    projectName: 'Winter Frost 5.0',
+    description: 'good stuff.... some sort of sport drink i think',
+    sampleDue: '',
+  },
+]
 export default function MainProjectsDashboard() {
   return (
     <>
@@ -11,34 +43,35 @@ export default function MainProjectsDashboard() {
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </head>
       <PageLayout pageName="Projects">
-        <div className="xs:h-screen m-3">
+        <div className="m-3 h-screen">
           <Row gutter={[16, 16]}>
-            <Col span={8}>
-              {/* title = {projectName} */}
-              {/* pass it in the porject name when loopong thorugh data later? */}
-              <Card title="Sample Project" bordered={false}>
-                <div className="pb-9">
-                  <Typography.Title level={5} style={{ margin: 0 }}>
-                    Description
-                  </Typography.Title>
-                  idk something im so tired
-                </div>
-                <div className="flex justify-between">
-                  <p>Sample due __</p>
-                  <Avatar.Group>
-                    <Avatar icon={<UserOutlined />} />
-                    <Tooltip title="Ant User" placement="top">
-                      <Avatar
-                        style={{
-                          backgroundColor: '#87d068',
-                        }}
-                        icon={<UserOutlined />}
-                      />
-                    </Tooltip>
-                  </Avatar.Group>
-                </div>
-              </Card>
-            </Col>
+            <>
+              {data.map(d => {
+                return (
+                  <Col xs={24} sm={12} lg={8}>
+                    <Card title={d.projectName} bordered={false} className="h-full">
+                      <div className="pb-9">
+                        <Typography.Title level={5} style={{ margin: 0 }}>
+                          Description
+                        </Typography.Title>
+                        {d.description}
+                      </div>
+                      {d.sampleDue.length == 0 ? (
+                        <>
+                          <Text type="secondary">Currently No Sample Due date</Text>
+                        </>
+                      ) : (
+                        <div>
+                          <Text type="secondary">Sample Due </Text>
+                          <br />
+                          <Text type="secondary">{d.sampleDue}</Text>
+                        </div>
+                      )}
+                    </Card>
+                  </Col>
+                )
+              })}
+            </>
           </Row>
         </div>
       </PageLayout>
