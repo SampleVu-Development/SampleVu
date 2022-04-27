@@ -26,7 +26,7 @@ const PageLayout: React.FC<PageProps> = ({ pageName, children }) => (
         <Navbar />
       </Sider>
       <Layout>
-        {pageName === 'Projects' ? (
+        {pageName === 'Project Dashboard' ? (
           <ProjectDashboardHeader pageName={pageName} />
         ) : (
           <PageHeader title={pageName} className="bg-white" />

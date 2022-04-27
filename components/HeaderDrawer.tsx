@@ -17,7 +17,7 @@ const HeaderDrawer = ({ visible, setVisible }) => {
           </a>
         </li>
         <li>
-          <a className="flex items-center align-middle text-[17px]">
+          <a href="/main-projects-dashboard" className="flex items-center align-middle text-[17px]">
             <AppstoreOutlined style={{ fontSize: '100%' }} className="m-2 p-2" />
             Project
           </a>

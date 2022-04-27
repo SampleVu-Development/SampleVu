@@ -42,7 +42,7 @@ export default function MainProjectsDashboard() {
         <title>SampleVu</title>
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </head>
-      <PageLayout pageName="Projects">
+      <PageLayout pageName="Project Dashboard">
         <div className="m-3 h-screen">
           <Row gutter={[16, 16]}>
             <>
@@ -59,7 +59,7 @@ export default function MainProjectsDashboard() {
                         </div>
                         {d.sampleDue.length == 0 ? (
                           <>
-                            <Text type="secondary">Currently No Sample Due date</Text>
+                            <Text type="secondary">Currently No Sample Due Date</Text>
                           </>
                         ) : (
                           <div>

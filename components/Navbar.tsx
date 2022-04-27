@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
         icon={<AppstoreOutlined style={{ fontSize: '100%' }} />}
         className="indent-4  text-[17px]"
       >
-        <a href="/project-dashboard"> Project</a>
+        <a href="/main-projects-dashboard"> Project</a>
       </Menu.Item>
     </Menu>
   )
