@@ -4,8 +4,8 @@ import OverallRatingCard from '../components/survey/OverallRatingCard'
 import PageLayout from '../components/PageLayout'
 import Sortable from 'sortablejs'
 import { useEffect } from 'react'
-import { Button } from 'antd'
-
+import { Button, Layout, Space } from 'antd'
+const { Footer } = Layout
 export default function Survey() {
   function surveyQuestionCallback(information) {
     console.log('question information:')
@@ -68,9 +68,13 @@ export default function Survey() {
           </div>
 
           <SurveyCard type="create" callback={surveyQuestionCallback} />
-
-          {/* Add Question Button */}
-          {/* Save Survey Button */}
+          <Footer className="mt-3 flex items-baseline justify-center bg-gray-200">
+            <Space>
+              <div>Does everything looks okay? </div>
+              <Button> Cancel </Button>
+              <Button type="primary"> Submit </Button>
+            </Space>
+          </Footer>
         </main>
       </PageLayout>
     </>

@@ -95,7 +95,7 @@ export default function ProjectDashboard() {
                       <FileTextOutlined style={{ fontSize: '170%' }} className="m-2" />
                       <p className="m-3 text-lg text-blue-500">Create New Survey</p>
                       <Button type="primary" size="large" disabled={dummySampleData.length == 0}>
-                        Add Survey
+                        <a href="/survey-demo">Add Survey</a>
                       </Button>
                     </div>
                   </Card>
