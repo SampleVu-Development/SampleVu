@@ -204,7 +204,7 @@ export default function ManageSamples() {
       dataIndex: 'edit',
       key: 'edit',
       render: (link, entryInfo, i) => {
-        return <a href={`create-sample?sample=${entryInfo.sampleID}`}>Edit</a>
+        return <a href={`edit-sample?sample=${entryInfo.sampleID}`}>Edit</a>
       },
     },
   ]

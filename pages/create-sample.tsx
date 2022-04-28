@@ -7,14 +7,7 @@ import { StopOutlined, DeleteOutlined, CheckOutlined } from '@ant-design/icons'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-export default function CreateSample() {
-  const defaultSample = {
-    'company-name': 'awesome',
-    'sample-num': '',
-    'crm-id': 'rekt',
-    instructions: '',
-    documents: '',
-  }
+export default function CreateSample({ edit }) {
   const router = useRouter()
   const { sample } = router.query
 
@@ -22,13 +15,27 @@ export default function CreateSample() {
   const titleText = sample == null ? 'Create New Sample' : 'Edit Sample'
   const formText = sample == null ? 'Create New Sample' : `Edit Sample: ${sample}`
 
-  const [sampleDetails, updateSampleDetails] = useState({ ...defaultSample })
+  const thisSample =
+    edit == null
+      ? {
+          'company-name': '',
+          'sample-num': '',
+          'crm-id': '',
+          instructions: '',
+          documents: '',
+        }
+      : {
+          'company-name': 'prefilled company name 1',
+          'sample-num': 'prefilled smaple num',
+          'crm-id': 'prefilled crm-id',
+          instructions: 'prefilled instructions',
+          documents: 'prefilled documents',
+        }
+  console.log(thisSample)
 
   const updateSample = (event: any, id: string) => {
-    let newArr = { ...sampleDetails }
-    if (id != 'documents') newArr[id] = event.target.value
-    else newArr[id] = event
-    updateSampleDetails(newArr)
+    if (id != 'documents') thisSample[id] = event.target.value
+    else thisSample[id] = event
   }
 
   const finalizeSample = () => {
@@ -49,7 +56,7 @@ export default function CreateSample() {
       <PageLayout pageName={titleText}>
         <main id="sample-main-container" className="p-6 text-center">
           <div id="sample-view">
-            <CreateSampleForm title={formText} update={updateSample} data={sampleDetails} />
+            <CreateSampleForm title={formText} update={updateSample} data={thisSample} />
           </div>
           <Space>
             <a href="manage-samples">

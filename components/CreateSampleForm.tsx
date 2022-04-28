@@ -11,7 +11,6 @@ const formItemLayout = {
 
 export default function CreateSampleForm({ update, data, title }) {
   const normFile = (e: any) => {
-    // console.log('Upload event:', e)
     if (Array.isArray(e)) {
       return e
     }
