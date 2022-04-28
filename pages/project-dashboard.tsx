@@ -131,19 +131,21 @@ export default function ProjectDashboard() {
                   title="Samples"
                   extra={
                     <Space className="block md:flex">
-                      <Button
-                        disabled={dummySampleData.length == 0}
-                        type="primary"
-                        icon={<PlusOutlined className="relative bottom-0.5 p-1" />}
-                      >
-                        Add Samples
-                      </Button>
-                      <Button disabled={dummySampleData.length == 0}>
-                        <a href="manage-samples"> Manage Sample</a>
-                      </Button>
-                      <Button disabled={dummySampleData.length == 0}>
-                        <a href="results"> View Results</a>
-                      </Button>
+                      <a href="create-sample">
+                        <Button
+                          disabled={dummySampleData.length == 0}
+                          type="primary"
+                          icon={<PlusOutlined className="relative bottom-0.5 p-1" />}
+                        >
+                          Add Samples
+                        </Button>
+                      </a>
+                      <a href="manage-samples">
+                        <Button disabled={dummySampleData.length == 0}>Manage Sample</Button>
+                      </a>
+                      <a href="results">
+                        <Button disabled={dummySampleData.length == 0}>View Results</Button>
+                      </a>
                     </Space>
                   }
                 >
