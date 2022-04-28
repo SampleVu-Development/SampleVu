@@ -1,39 +1,9 @@
 import Head from 'next/head'
 import PageLayout from '../components/PageLayout'
 import { Card, Row, Col, Typography } from 'antd'
+import dummyData from '../dummy-data.js'
 const { Text } = Typography
-const data = [
-  {
-    key: '1',
-    projectName: 'Winter Frost',
-    description: 'good stuff.... some sort of sport drink i think',
-    sampleDue: 'April 30, 2021',
-  },
-  {
-    key: '2',
-    projectName: 'Winter Frost 2.0',
-    description: 'good stuff.... some sort of sport drink i think',
-    sampleDue: 'April 30, 2022',
-  },
-  {
-    key: '3',
-    projectName: 'Winter Frost 3.0',
-    description: 'good stuff.... some sort of sport drink i think',
-    sampleDue: '',
-  },
-  {
-    key: '4',
-    projectName: 'Winter Frost 4.0',
-    description: 'good stuff.... some sort of sport drink i think',
-    sampleDue: 'April 30, 2022',
-  },
-  {
-    key: '5',
-    projectName: 'Winter Frost 5.0',
-    description: 'good stuff.... some sort of sport drink i think',
-    sampleDue: '',
-  },
-]
+
 export default function MainProjectsDashboard() {
   return (
     <>
@@ -45,12 +15,12 @@ export default function MainProjectsDashboard() {
         <div className="m-3 h-screen">
           <Row gutter={[16, 16]}>
             <>
-              {data.map(d => {
+              {Object.keys(dummyData).map(d => {
                 return (
                   <Col xs={24} sm={12} lg={8}>
-                    <a href="/project-dashboard">
+                    <a href={`/project-dashboard?id=${d}`}>
                       <Card
-                        title={d.projectName}
+                        title={dummyData[d].projectName}
                         bordered={false}
                         className="h-full hover:shadow-lg"
                       >
@@ -58,9 +28,9 @@ export default function MainProjectsDashboard() {
                           <Typography.Title level={5} style={{ margin: 0 }}>
                             Description
                           </Typography.Title>
-                          {d.description}
+                          {dummyData[d].description}
                         </div>
-                        {d.sampleDue.length == 0 ? (
+                        {dummyData[d].dueDate.length == 0 ? (
                           <>
                             <Text type="secondary">Currently No Sample Due Date</Text>
                           </>
@@ -68,7 +38,7 @@ export default function MainProjectsDashboard() {
                           <div>
                             <Text type="secondary">Sample Due </Text>
                             <br />
-                            <Text type="secondary">{d.sampleDue}</Text>
+                            <Text type="secondary">{dummyData[d].dueDate}</Text>
                           </div>
                         )}
                       </Card>

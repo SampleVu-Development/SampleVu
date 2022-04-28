@@ -21,10 +21,15 @@ import {
 } from '@ant-design/icons'
 import PageLayout from '../components/PageLayout'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+import dummyData from '../dummy-data.js'
+import { useEffect } from 'react'
 
 const { Search } = Input
 
 export default function ManageSamples() {
+  const router = useRouter()
+  const { id } = router.query
   const projectName: String = 'Winter Frost'
   const projectID: String = 'ProjectWinterFrostID'
 
@@ -34,6 +39,10 @@ export default function ManageSamples() {
     setModalContent(displayData[index])
     setIsModalVisible(true)
   }
+
+  useEffect(() => {
+    console.log(id)
+  })
 
   const handleOk = () => {
     setIsModalVisible(false)
@@ -54,70 +63,9 @@ export default function ManageSamples() {
 
   const [selectionType, setSelectionType] = useState('checkbox')
 
-  const loadedData = [
-    {
-      key: '1',
-      sampleID: '59468-622',
-      vendor: 'acataaa',
-      date: '05/19/20',
-      rating: 3,
-      responses: 4,
-      enabled: true,
-      share: 'https://url-1.com',
-    },
-    {
-      key: '2',
-      sampleID: '14882-622',
-      vendor: 'ccccataa',
-      date: '03/09/22',
-      rating: 4,
-      responses: 1,
-      enabled: false,
-      share: 'https://url-2.com',
-    },
-    {
-      key: '3',
-      sampleID: '33333-111',
-      vendor: 'dddddgang',
-      date: '04/01/21',
-      rating: 5,
-      responses: 3,
-      enabled: false,
-      share: 'https://url-3.com',
-    },
-    {
-      key: '4',
-      sampleID: '22222-111',
-      vendor: 'bbbb',
-      date: '12/30/08',
-      rating: 5,
-      responses: 2,
-      enabled: true,
-      share: 'https://url-4.com',
-    },
-    {
-      key: '5',
-      sampleID: '33333-111',
-      vendor: 'ddddd',
-      date: '04/01/21',
-      rating: 5,
-      responses: 3,
-      enabled: false,
-      share: 'https://url-5.com',
-    },
-    {
-      key: '6',
-      sampleID: '22222-111',
-      vendor: 'bbbb',
-      date: '12/30/08',
-      rating: 5,
-      responses: 2,
-      enabled: true,
-      share: 'https://url-6.com',
-    },
-  ]
-
-  const [dataSource, setDataSource] = useState([...loadedData])
+  const [dataSource, setDataSource] = useState(
+    dummyData[id] != null ? [...dummyData[id].samples] : []
+  )
 
   const [displayData, setDisplayData] = useState([...dataSource])
 
@@ -225,57 +173,63 @@ export default function ManageSamples() {
         <title>SampleVu</title>
         <meta name="SampleVu helps companies organize and supply" content="SampleVu" />
       </Head>
-      <PageLayout pageName="Manage Samples">
-        <main className="p-2.5 text-center">
-          <PageHeader
-            className="sticky w-full bg-white sm:top-0 md:top-20  md:z-30"
-            title={`Manage Samples - ${projectName}`}
-            extra={[
-              <Search placeholder="input search text" onSearch={onSearch} style={{ width: 200 }} />,
-              <Button className="border-transparent" icon={<ReloadOutlined />}></Button>,
-              <Button className="border-transparent" icon={<ColumnHeightOutlined />}></Button>,
-              <Button className="border-transparent" icon={<SettingOutlined />}></Button>,
-              <Button className="border-transparent" icon={<ExpandOutlined />}></Button>,
-            ]}
-          >
-            <Descriptions size="small" column={3}>
-              <Descriptions.Item>
-                <Space className="p-2">
-                  <a href="results">
-                    <Button
-                      type="primary"
-                      icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
-                    >
-                      View Results
-                    </Button>
-                  </a>
-                  <a href="create-sample">
-                    <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
-                      Add Sample
-                    </Button>
-                  </a>
-                </Space>
-              </Descriptions.Item>
-            </Descriptions>
-          </PageHeader>
-          <Card>
-            <Table
-              scroll={{ x: true }}
-              dataSource={displayData}
-              columns={columns}
-              rowSelection={{
-                type: selectionType,
-                ...rowSelection,
-              }}
-            />
-            ;
-          </Card>
-        </main>
+      {id !== null && (
+        <PageLayout pageName="Manage Samples">
+          <main className="p-2.5 text-center">
+            <PageHeader
+              className="sticky w-full bg-white sm:top-0 md:top-20  md:z-30"
+              title={`Manage Samples - ${projectName}`}
+              extra={[
+                <Search
+                  placeholder="input search text"
+                  onSearch={onSearch}
+                  style={{ width: 200 }}
+                />,
+                <Button className="border-transparent" icon={<ReloadOutlined />}></Button>,
+                <Button className="border-transparent" icon={<ColumnHeightOutlined />}></Button>,
+                <Button className="border-transparent" icon={<SettingOutlined />}></Button>,
+                <Button className="border-transparent" icon={<ExpandOutlined />}></Button>,
+              ]}
+            >
+              <Descriptions size="small" column={3}>
+                <Descriptions.Item>
+                  <Space className="p-2">
+                    <a href="results">
+                      <Button
+                        type="primary"
+                        icon={<CheckSquareOutlined className="relative bottom-0.5 p-1" />}
+                      >
+                        View Results
+                      </Button>
+                    </a>
+                    <a href="create-sample">
+                      <Button icon={<PlusOutlined className="relative bottom-0.5 p-1" />}>
+                        Add Sample
+                      </Button>
+                    </a>
+                  </Space>
+                </Descriptions.Item>
+              </Descriptions>
+            </PageHeader>
+            <Card>
+              <Table
+                scroll={{ x: true }}
+                dataSource={displayData}
+                columns={columns}
+                rowSelection={{
+                  type: selectionType,
+                  ...rowSelection,
+                }}
+              />
+              ;
+            </Card>
+          </main>
 
-        <Modal title="Basic Modal" visible={isModalVisible} footer={null} onCancel={handleCancel}>
-          {modalContent !== null && <a href={modalContent.share}>{modalContent.share}</a>}
-        </Modal>
-      </PageLayout>
+          <Modal title="Basic Modal" visible={isModalVisible} footer={null} onCancel={handleCancel}>
+            {modalContent !== null && <a href={modalContent.share}>{modalContent.share}</a>}
+          </Modal>
+        </PageLayout>
+      )}
     </>
   )
 }
