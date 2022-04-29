@@ -21,7 +21,7 @@ export default function ProjectDashboard() {
     {
       key: '1',
       sampleID: '59468-622',
-      vendor: 'acataaa',
+      vendor: 'vendor 1',
       date: '05/19/20',
       rating: 3,
       responses: 4,
@@ -31,7 +31,7 @@ export default function ProjectDashboard() {
     {
       key: '2',
       sampleID: '14882-622',
-      vendor: 'ccccataa',
+      vendor: 'vendor 2',
       date: '03/09/22',
       rating: 4,
       responses: 1,
@@ -41,7 +41,7 @@ export default function ProjectDashboard() {
     {
       key: '3',
       sampleID: '33333-111',
-      vendor: 'ddddd',
+      vendor: 'vendor 3',
       date: '04/01/21',
       rating: 5,
       responses: 3,

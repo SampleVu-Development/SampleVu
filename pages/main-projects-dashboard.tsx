@@ -6,31 +6,31 @@ const data = [
   {
     key: '1',
     projectName: 'Winter Frost',
-    description: 'good stuff.... some sort of sport drink i think',
+    description: 'sport drink 1.0',
     sampleDue: 'April 30, 2021',
   },
   {
     key: '2',
     projectName: 'Winter Frost 2.0',
-    description: 'good stuff.... some sort of sport drink i think',
+    description: 'Sport drink 2.0',
     sampleDue: 'April 30, 2022',
   },
   {
     key: '3',
     projectName: 'Winter Frost 3.0',
-    description: 'good stuff.... some sort of sport drink i think',
+    description: 'Sport drink 3.0',
     sampleDue: '',
   },
   {
     key: '4',
     projectName: 'Winter Frost 4.0',
-    description: 'good stuff.... some sort of sport drink i think',
+    description: 'sport drink 4.0',
     sampleDue: 'April 30, 2022',
   },
   {
     key: '5',
     projectName: 'Winter Frost 5.0',
-    description: 'good stuff.... some sort of sport drink i think',
+    description: 'sport drink 5.0',
     sampleDue: '',
   },
 ]
