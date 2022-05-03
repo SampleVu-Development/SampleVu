@@ -54,7 +54,7 @@ export default function CreateSample({ edit }) {
       </Head>
 
       <PageLayout pageName={titleText}>
-        <main id="sample-main-container" className="p-6 text-center">
+        <main id="sample-main-container" className="h-screen p-6 text-center">
           <div id="sample-view">
             <CreateSampleForm title={formText} update={updateSample} data={thisSample} />
           </div>
