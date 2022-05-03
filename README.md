@@ -65,38 +65,14 @@ You can install all of the required dependencies using npm
 npm install
 ```
 
-# Couple of team notes
+## Usage
 
-Make sure you **fetch and pull** from main **_frequently_**.
+Unfortunately, there is currently no server hosting SampleVu (work in progress), but Next.js does provide the ability to host the application locally
 
-Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
+After the installation is complete:
 
-You may have noticed TypeScript is enabled here. Because plain JS is valid TS, we've decided to do the rest of the coding in TypeScript so that we can properly type and document various props and whatnot passed down components. Also enables us to catch a fair amount of bugs at compile time, and will be much more maintainable as the project develops. Because Next.js 12 has a built-in TS compiler in their Rust SWC, it'll be fair better to work with than if we had used Babel. It will also be beneficial to have with respect to using ORM libraries (most likely using Prisma) and APIs.
+- Run `npm run dev` to start the development server on `http://localhost:3000`
+- Visit `http://localhost:3000` to view your application
+- You can access different pages using their routes (i.e., `http://localhost:3000/results`)
 
-# Next.js + Tailwind CSS Example
-
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
-
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+User Documentation can be found in the [Documentation Plan](https://docs.google.com/document/d/1yZpJIDNbC75nkTlyxJNe-o-vq9OYhQEVyy5llgnbNqg/edit?usp=sharing)
