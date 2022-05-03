@@ -2,6 +2,8 @@
 
 SampleVu is a digital product management app and feedback collection tool designed to streamline and organize product development processes in the food industry.
 
+**NOTE**: This project is still a work in progress and is not the complete product
+
 ## About Our Code
 
 **(Documentation will be linked below)**
