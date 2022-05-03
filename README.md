@@ -34,9 +34,9 @@ SampleVu is a digital product management app and feedback collection tool design
 - **Frontend**: [Vercel](https://vercel.com/docs)
 - **Database**: [Amazon RDS](https://docs.aws.amazon.com/rds/index.html?nc2=h_ql_doc_rds)
 
-We highly recommend enabling [Prettier](https://prettier.io/) as a plugin, regardless of the editor/IDE you're using, in order to maintain consistent formatting for the project's code.
+We highly recommend enabling **[Prettier](https://prettier.io/)** as a plugin, regardless of the editor/IDE you're using, in order to maintain consistent formatting for the project's code.
 
-For more information about our design decisions, please refer to our [Design Document](https://tarheels.live/523eggplants/d2-design-document-2/)
+For more information about our design decisions, please refer to our **[Design Document](https://tarheels.live/523eggplants/d2-design-document-2/)**
 
 ## Installation
 
@@ -77,4 +77,4 @@ After the installation is complete:
 - Visit `http://localhost:3000` to view your application
 - You can access different pages using their routes (i.e., `http://localhost:3000/results`)
 
-User Documentation can be found in the [Documentation Plan](https://docs.google.com/document/d/1yZpJIDNbC75nkTlyxJNe-o-vq9OYhQEVyy5llgnbNqg/edit?usp=sharing)
+User Documentation can be found in the **[Documentation Plan](https://docs.google.com/document/d/1yZpJIDNbC75nkTlyxJNe-o-vq9OYhQEVyy5llgnbNqg/edit?usp=sharing)**
