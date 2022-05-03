@@ -1,3 +1,7 @@
+# SampleVu
+
+SampleVu is a digital product management web application and feedback collection tool desgined to streamline and organize product development processes in the food industry. 
+
 # Couple of team notes
 
 Make sure you enable **Prettier** as a plugin, regardless of the editor/IDE you're using (this is being pushed from Webstorm, but VSCode works similarly). Auto-format on save will be your biggest friend!
