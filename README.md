@@ -1,12 +1,38 @@
 # SampleVu
 
-SampleVu is a digital product management web application and feedback collection tool desgined to streamline and organize product development processes in the food industry. 
+SampleVu is a digital product management app and feedback collection tool designed to streamline and organize product development processes in the food industry.
+
+## About Our Code (Documentation will be linked below)
+
+**Languages**
+
+- JavaScript
+- TypeScript
+
+**Frontend**
+
+- **Framework**: [Next.js (React)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [Ant Design](https://ant.design/)
+- **Other Libraries**: [Ant Design Charts](https://charts.ant.design/en)
+
+**Backend**
+
+- **Framework**: Next.js, [Node.js](https://nodejs.org/en/)
+- **API Architecture**: [REST](https://restfulapi.net/)
+
+**Database**
+
+- [Prisma ORM](https://www.prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+For more information, please refer to our [Design Document](https://tarheels.live/523eggplants/d2-design-document-2/)
 
 # Couple of team notes
 
 Make sure you enable **Prettier** as a plugin, regardless of the editor/IDE you're using (this is being pushed from Webstorm, but VSCode works similarly). Auto-format on save will be your biggest friend!
 
 Before interacting with any code, ensure you have all the dependencies installed, and are using **Node LTS v16.14.0 or later, and npm v8.5.2 or later**. Recommedation here is to use **nvm** (Node Version Manager) to download and switch between Node and npm versions. If you aren't on nvm, and you're having trouble navigating between Node versions, recommendation is to uninstall node and npm, then download nvm to install node directly through it.
+
 ```bash
 node -v
 npm -v
@@ -15,18 +41,11 @@ npm install
 
 Personal recommendation for cloning, branching, or any other git actions is by using **[GitHub Desktop](https://desktop.github.com/)**. This enables easy fetch, pull, and merging, as well as consistent committing, branching, and pushing options. Third party applications for VCS may not work well with the access restrictions in this organizations, but GitHub Desktop is a safe, intuitive way of solving these issues.
 
-Make sure you **fetch and pull** from main ***frequently***.
+Make sure you **fetch and pull** from main **_frequently_**.
 
 Refer to [Next.js documentation wherever possible](https://nextjs.org/docs/testing#jest-and-react-testing-library).
 
-You may have noticed TypeScript is enabled here. Because plain JS is valid TS, we've decided to do the rest of the coding in TypeScript so that we can properly type and document various props and whatnot passed down components. Also enables us to catch a fair amount of bugs at compile time, and will be much more maintainable as the project develops. Because Next.js 12 has a built-in TS compiler in their Rust SWC, it'll be fair better to work with than if we had used Babel. It will also be beneficial to have with respect to using ORM libraries (most likely using Prisma) and APIs. 
-
-
-
-
-
-
-
+You may have noticed TypeScript is enabled here. Because plain JS is valid TS, we've decided to do the rest of the coding in TypeScript so that we can properly type and document various props and whatnot passed down components. Also enables us to catch a fair amount of bugs at compile time, and will be much more maintainable as the project develops. Because Next.js 12 has a built-in TS compiler in their Rust SWC, it'll be fair better to work with than if we had used Babel. It will also be beneficial to have with respect to using ORM libraries (most likely using Prisma) and APIs.
 
 # Next.js + Tailwind CSS Example
 
