@@ -83,3 +83,9 @@ After the installation is complete:
 - You can access different pages using their routes (i.e., `http://localhost:3000/results`)
 
 User Documentation can be found in the **[Documentation Plan](https://docs.google.com/document/d/1yZpJIDNbC75nkTlyxJNe-o-vq9OYhQEVyy5llgnbNqg/edit?usp=sharing)**
+
+## Testing
+
+- Run `./node_modules/.bin/cypress open` in the root repository folder to start cypress tests
+- Click `sample_spec.js` once Cypress opens
+- Tests will run automatically
