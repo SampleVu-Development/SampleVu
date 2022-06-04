@@ -5,27 +5,108 @@
   Also offers Next/Link to Login
  */
 
-import Head from 'next/head'
-import React, { useState } from 'react'
-import PageLayout from '../components/PageLayout'
+import BasicLayout from '../components/authantication/basicLayout'
+import { Form, Input, Button, Select } from 'antd'
+const { Option } = Select
 
 const SignUp: React.FC = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-
+  const prefixSelector = (
+    <Form.Item name="prefix" noStyle>
+      <Select
+        style={{
+          width: 70,
+        }}
+      >
+        <Option value="1">+1</Option>
+        <Option value="86">+86</Option>
+      </Select>
+    </Form.Item>
+  )
+  const onFinish = values => {
+    console.log('Received values of form: ', values)
+  }
   return (
-    <PageLayout pageName="Sign Up">
-      <Head>
-        <title>{/* SampleVu Signup */}</title>
-        {/* Other Metadata */}
-      </Head>
-      <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
-        {/* SampleVu Logo */}
-        {/* Sign-up form */}
-        {/* Sign-up button */}
-        {/* Login link */}
-      </div>
-    </PageLayout>
+    <BasicLayout>
+      <Form
+        name="normal_login"
+        className="login-form"
+        initialValues={{
+          prefix: 1,
+        }}
+        onFinish={onFinish}
+      >
+        <Form.Item
+          name="Email"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your email',
+            },
+          ]}
+        >
+          <Input placeholder="Email" size="large" className="sm:w-[25rem]" />
+        </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your Password!',
+            },
+          ]}
+          hasFeedback
+        >
+          <Input.Password
+            type="password"
+            placeholder="Password (6 digits at least, case sensitive)"
+            size="large"
+          />
+        </Form.Item>
+        <Form.Item
+          name="confirm"
+          dependencies={['password']}
+          hasFeedback
+          rules={[
+            {
+              required: true,
+              message: 'Please confirm your password!',
+            },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue('password') === value) {
+                  return Promise.resolve()
+                }
+
+                return Promise.reject(new Error('The two passwords that you entered do not match!'))
+              },
+            }),
+          ]}
+        >
+          <Input.Password type="password" placeholder="Confirm entered password" size="large" />
+        </Form.Item>
+
+        <Form.Item
+          name="phone"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your phone number!',
+            },
+          ]}
+        >
+          <Input size="large" placeholder="Phone number" addonBefore={prefixSelector} />
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit" className="w-full">
+            Sign up
+          </Button>
+          <a className="mt-3 flex justify-end text-blue-500" href="/login">
+            Have an account already? Click here to login
+          </a>
+        </Form.Item>
+      </Form>
+    </BasicLayout>
   )
 }
 
