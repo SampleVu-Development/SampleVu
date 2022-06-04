@@ -8,13 +8,15 @@ type PageProps = {
 const BasicLayout: React.FC<PageProps> = ({ children }) => (
   <div className="h-screen bg-slate-100">
     <div className="flex justify-center pt-40">
-      <Image
-        src={logo}
-        alt="logo"
-        width={300}
-        height={65}
-        className="hover:bg-bannerHover outline-hidden"
-      />
+      <a href="/">
+        <Image
+          src={logo}
+          alt="logo"
+          width={300}
+          height={65}
+          className="hover:bg-bannerHover outline-hidden"
+        />
+      </a>
     </div>
     <div className="flex justify-center pt-10">{children}</div>
   </div>
