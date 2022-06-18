@@ -20,6 +20,11 @@ const { TextArea } = Input
  */
 
 export type QuestionProps = {
+  questionData: QuestionData
+  editable?: boolean
+}
+
+export type QuestionData = {
   questionId: number // uuid of question
   questionOrder: number // order of question
   question: string // actual question string
@@ -29,14 +34,16 @@ export type QuestionProps = {
 }
 
 // passed through EditSurvey or TasterSurvey by mapping array of question objects obtained from data
-// pass in QuestionData via object spread props={...question}
 const QuestionCard: React.FC<QuestionProps> = ({
-  question: text,
-  questionId: id,
-  questionOrder: order,
-  questionType: type,
-  answerChoices: choices,
-  required: isRequired,
+  questionData: {
+    question: text,
+    questionId: id,
+    questionOrder: order,
+    questionType: type,
+    answerChoices: choices,
+    required: isRequired,
+  },
+  editable = false,
 }) => {
   // Maybe use useRef hook instead for form building, since we only need to "save" state on submit
   const [question, setQuestion] = useState(text)
@@ -53,7 +60,7 @@ const QuestionCard: React.FC<QuestionProps> = ({
   // Also can pass Draggable here
   return (
     <div className="flex justify-center p-2.5">
-      <Card className="w-5/6 max-w-xl rounded-xl border-gray-300">
+      <Card className="border-gray-300 w-5/6 max-w-xl rounded-xl">
         {/* If editable, Reorder buttons (editable && ...)*/}
 
         {/* If editable, Select Question Type Dropdown like Google Forms (onChange => setQuestionType) */}
@@ -72,7 +79,7 @@ const QuestionCard: React.FC<QuestionProps> = ({
           <Card bordered={false}>
             <TextArea
               rows={1}
-              className="rounded-xl border-gray-300"
+              className="border-gray-300 rounded-xl"
               placeholder="Write a comment..."
               onChange={e => tempCallback({ question, id, type: 'input', event: e.target.value })}
             />

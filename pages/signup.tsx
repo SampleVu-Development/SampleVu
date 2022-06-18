@@ -82,7 +82,7 @@ const SignUp: React.FC = () => {
             }),
           ]}
         >
-          <Input.Password type="password" placeholder="Confirm entered password" size="large" />
+          <Input.Password type="password" placeholder="Confirm password" size="large" />
         </Form.Item>
 
         <Form.Item
